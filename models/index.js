@@ -12,7 +12,7 @@ var settings  = require(__dirname +'/../settings/settings.js');
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
-  var sequelize = new Sequelize(config.database, settings[0].name, settings[0].pass, config);
+  var sequelize = new Sequelize(config.database, config.username, settings[0].pass, config);
 }
 
 fs
@@ -21,9 +21,9 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(function(file) {
-    var model = sequelize['import'](path.join(__dirname, file));
-    db[model.name] = model;
-  });
+     var model = sequelize['import'](path.join(__dirname, file));
+     db[model.name] = model;
+   });
 
 Object.keys(db).forEach(function(modelName) {
   if (db[modelName].associate) {
