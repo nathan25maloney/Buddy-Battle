@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var challenges = sequelize.define("challenges", {
+  var Challenge = sequelize.define("Challenge", {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -14,15 +14,15 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  challenges.associate = function(models) {
+  Challenge.associate = function(models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
-    challenges.belongsTo(models.users, {
+    Challenge.belongsTo(models.users, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return challenges;
+  return Challenge;
 };
