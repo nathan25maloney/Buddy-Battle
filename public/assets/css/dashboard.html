@@ -49,71 +49,80 @@
                         <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <a href="#">
-                            <i class="glyphicon glyphicon-plus"></i>
-                            Create New Challenge </a>
+<!-- ///////////////////////////////////   MODAl #1   ///////////////////////////////////////////////////-->
+                                    <!-- Trigger/Open The Modal -->
+                                    <button id="myBtn1">
+                                        <!-- Modal 1 --><i class="glyphicon glyphicon-plus"></i> Create New Challenge
+                                    </button>
+                                    <!-- The Modal -->
+                                    <div id="myModal1" class="modal">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                    </div>
                                 </li>
+                                <br>
+<!-- /////////////////////////////////////   MODAL #2   ////////////////////////////////////////////////-->
+
                                 <li>
-                                    <a href="#">
-                            <i class="glyphicon glyphicon-user"></i>
-                            friends </a>
+                                    <i class="glyphicon glyphicon-arrow-right"></i> Join Challenge
                                 </li>
+                                <br>
+<!-- /////////////////////////////////////   MODAL #3  ////////////////////////////////////////////////-->
                                 <li>
-                                    <a href="#" target="_blank">
-                            <i class="glyphicon glyphicon-option-vertical"></i>
-                            Challenges Won </a>
+                                    <button id="myBtn2">
+                                        <i class="glyphicon glyphicon-user">
+                                                </i> friends
+                                    </button>
+                                    <!-- The Modal -->
+                                    <div id="myModal2" class="modal">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                        <br>
+                                        <br>
                                 </li>
+                                <br>
+ <!-- /////////////////////////////////////   MODAL #4    ///////////////////////////////////////////////-->
                                 <li>
-                                    <a href="#">
-                            <i class="glyphicon glyphicon-menu-hamburger"></i>
-                            Challenge Rules </a>
+                                    <i class="glyphicon glyphicon-option-vertical"></i> Challenges Won
+                                </li>
+                                <br>
+ <!-- ///////////////////////////////////////   MODAL #5   ////////////////////////////////////////////////-->
+                                <li>
+                                    <i class="glyphicon glyphicon-menu-hamburger"></i> Challenge Rules
                                 </li>
                             </ul>
+                            </div>
+                            <!-- END MENU -->
                         </div>
-                        <!-- END MENU -->
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="profile-content">
-                        <div class="page-header">
-                            <h1>Challenges</h1>
-
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
-
-
+                    <div class="col-md-9">
+                        <div class="profile-content">
+                            <div class="page-header">
+                                <h1>Challenges</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </dir>
         <!-- Container Close -->
-    </div>
-    <br>
-    <br>
+        </div>
+        <br>
+        <br>
 </body>
 
 </html>
-
- <script type="text/javascript">
-
+<script type="text/javascript">
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('myModal1');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("myBtn1");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -134,6 +143,21 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
- </script>
-
+</script>
+<li>
+    <button id="myBtn">
+        <a href="#">
+                                            <i class="glyphicon glyphicon-user">
+                                                </i>
+                                                friends </a>
+    </button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+        <br>
+        <br>
+</li>
