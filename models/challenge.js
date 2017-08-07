@@ -1,25 +1,63 @@
 module.exports = function(sequelize, DataTypes) {
   var Challenge = sequelize.define("Challenge", {
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    body: {
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
+    },
+    measurement: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    deadline: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    gameCode: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     }
   });
 
   Challenge.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
-    Challenge.belongsTo(models.users, {
+    // Challenge should belong to only one User
+    // A Challenge can't be created without a User due to the foreign key constraint
+    Challenge.belongsTo(models.User, {
       foreignKey: {
+        as: "creator",
+        name: "creator_id",
         allowNull: false
+      }
+    });
+
+    // Challenge should have multiple Users as participants
+    Challenge.belongsToMany(models.User, {
+      through: models.UserChallenge,
+      foreignKey: {
+        name: "user_id",
+        allowNull: false
+      }
+    });
+
+     // Challenge should have one User as the winner
+    Challenge.belongsTo(models.User, {
+      foreignKey: {
+        as: "winner"
+        name: "winner_id",
+        allowNull: true
       }
     });
   };
