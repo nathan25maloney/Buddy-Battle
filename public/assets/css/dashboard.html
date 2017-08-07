@@ -4,9 +4,9 @@
 <head>
     <link rel="stylesheet" href="assets/css/reset.css">
     <title>Battle Buddy</title>
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
     <script src="assets/javascript/vc.js" type="text/javascript"></script>
@@ -51,15 +51,22 @@
                                 <li class="active">
 <!-- ///////////////////////////////////   MODAl #1   ///////////////////////////////////////////////////-->
                                     <!-- Trigger/Open The Modal -->
-                                    <button id="myBtn1">
+                                    <button id="myBtn">
                                         <!-- Modal 1 --><i class="glyphicon glyphicon-plus"></i> Create New Challenge
                                     </button>
                                     <!-- The Modal -->
-                                    <div id="myModal1" class="modal">
+                                    <div id="myModal" class="modal">
                                         <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close">&times;</span>
-                                            <p>Some text in the Modal..</p>
+                                                 <div class="form-group">
+                                                  <label for="name">Challenge Name</label>
+                                                  <input type="text" class="form-control" id="name">
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="desc">Please describe your challenge</label>
+                                                  <input type="text" class="form-control" id="description">
+                                                </div>
                                         </div>
                                     </div>
                                 </li>
@@ -119,10 +126,10 @@
 </html>
 <script type="text/javascript">
 // Get the modal
-var modal = document.getElementById('myModal1');
+var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn1");
+var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -144,20 +151,3 @@ window.onclick = function(event) {
     }
 }
 </script>
-<li>
-    <button id="myBtn">
-        <a href="#">
-                                            <i class="glyphicon glyphicon-user">
-                                                </i>
-                                                friends </a>
-    </button>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
-        </div>
-        <br>
-        <br>
-</li>

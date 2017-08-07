@@ -1,6 +1,13 @@
 /*    --------------------------------------------------
     :: Login Section
     -------------------------------------------------- */
+#logo {
+    height: 300px;
+    width: 300px;
+    margin-left: 470px;
+
+}
+
 #login {
     padding-top: 50px
 }
@@ -9,7 +16,7 @@
     margin: 0 auto;
 }
 #login h1 {
-    color: #1fa67b;
+    color: black;
     font-size: 18px;
     text-align: center;
     font-weight: bold;
@@ -29,7 +36,7 @@
 }
 #login .checkbox.show:before {
     content: '\e013';
-    color: #1fa67b;
+    color: black;
     font-size: 17px;
     margin: 1px 0 0 3px;
     position: absolute;
@@ -46,7 +53,7 @@
     display: inline-block;
 }
 #login .checkbox .label {
-    color: #6d6d6d;
+    color: black;
     font-size: 13px;
     font-weight: normal;
 }
@@ -68,7 +75,7 @@
 }
 .btn-custom {
     color: #fff;
-    background-color: #1fa67b;
+    background-color: black;
 }
 .btn-custom:hover,
 .btn-custom:focus {
@@ -79,7 +86,7 @@
     :: Footer
     -------------------------------------------------- */
 #footer {
-    color: #6d6d6d;
+    color: black;
     font-size: 12px;
     text-align: center;
 }
@@ -243,4 +250,16 @@ background: none;
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/*    --------------------------------------------------
+    :: progress bar
+    -------------------------------------------------- */
+#progress {
+    float: left;
+}
+
+#picture {
+    height: 50px;
+    width: 50px;
 }
