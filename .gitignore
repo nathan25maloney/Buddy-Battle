@@ -58,3 +58,6 @@ typings/
 # dotenv environment variables file
 .env
 
+# hidden file on MacOS
+.DS_Store
+
