@@ -102,8 +102,22 @@ Dashboard CSS
 /*----------------------------------------------------------------------------------------------*
 /* Profile container */
 
+a {
+  color: blue;
+  text-decoration: none; /* no underline */
+}
+
 .profile {
   margin: 20px 0;
+}
+
+#profile-img {
+    height: 100px;
+    width: 100px;
+}
+
+#friend-name {
+    padding-left: 10px;
 }
 
 /* Profile sidebar */
@@ -230,7 +244,7 @@ Dashboard CSS
             margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
+            width: 65%;
         }
 
         /* The Close Button */
@@ -273,4 +287,13 @@ background: none;
     margin-top: 30px;
     margin-right: 100px;
     z-index: 0;
+}
+
+/*    --------------------------------------------------
+    Modal 4
+    -------------------------------------------------- */
+
+  #winner-pic {
+    height: 100px;
+    width: 100px;
 }
