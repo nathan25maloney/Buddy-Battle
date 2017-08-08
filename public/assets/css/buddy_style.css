@@ -260,6 +260,17 @@ background: none;
 }
 
 #picture {
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
+}
+
+.btn-btn-primary {
+    color: black;
+}
+
+#update {
+    float: right;
+    margin-top: 30px;
+    margin-right: 100px;
+    z-index: 0;
 }

@@ -66,6 +66,8 @@
                                             <div class="form-group">
                                                 <label for="desc">Please describe your challenge</label>
                                                 <input type="text" class="form-control" id="description">
+                                                <br>
+                                                <input class="btn-btn-primary" type="submit" value="Submit">
                                             </div>
                                         </div>
                                     </div>
@@ -112,22 +114,50 @@
                             <div class="page-header">
                                 <h1>(Challenge Name Here)</h1>
                             </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="profile-header-container">   
-                                    <div class="profile-header-img">
-                                        <img id="picture" class="img-circle" src="http://robbiedelfs.codes/wp-content/uploads/2016/08/27bafbe-3.jpg" />
-                                        <!-- badge -->
-                                        <div class="rank-label-container">
-                                            <span class="label label-default rank-label">Robbie Delfs</span>
+                            <!--/////////////// USER #1 /////////////////////////////////////////////////-->
+                            <div class="profile-header-container">
+                                <div id="prof-pic" class="profile-header-img">
+                                    <div id="update" class="col-xs-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                              <button class="btn btn-default" type="button">Update Progress!</button>
+                                            </span>
                                         </div>
                                     </div>
-                                </div> 
+                                    <img id="picture" class="img-circle" src="http://robbiedelfs.codes/wp-content/uploads/2016/08/27bafbe-3.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container">
+                                        <span class="label label-default rank-label">Robbie Delfs</span>
+                                        <br>
+                                        <div class="progress progress-striped active" id="progressouter">
+                                            <div class="bar" id="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>  
-                        <div class="progress progress-striped active" id="progressouter">
-                            <div class="bar" id="progress"></div>
+                            <!--/////////////// USER #2 /////////////////////////////////////////////////-->
+                            <div class="profile-header-container">
+                                <div id="prof-pic" class="profile-header-img">
+                                    <div id="update" class="col-xs-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                              <button class="btn btn-default" type="button">Update Progress!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <img id="picture" class="img-circle" src="http://robbiedelfs.codes/wp-content/uploads/2016/08/27bafbe-3.jpg" />
+                                    <!-- badge -->
+                                    <div class="rank-label-container">
+                                        <span class="label label-default rank-label">Robbie Delfs</span>
+                                        <br>
+                                        <div class="progress progress-striped active" id="progressouter">
+                                            <div class="bar" id="progress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +168,7 @@
         <br>
 </body>
 
-</html>
+
 <script type="text/javascript">
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -166,6 +196,8 @@ window.onclick = function(event) {
     }
 }
 
+
+//JQuery For Progress Bar//
 $(document).ready(function() {
     var progresspump = setInterval(function() {
         /* query the completion percentage from the server */
@@ -184,4 +216,7 @@ $(document).ready(function() {
         })
     }, 1000);
 });
+
 </script>
+
+</html>
