@@ -1,1 +1,253 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <title>Battle Buddy</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="assets/javascript/vc.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApqn8_Is2nTmy_U1own9W36OK4PA1klLs" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="buddy_style.css">
+</head>
+
+<body>
+    <div class="container">
+        <dir id="wrapBox">
+            <div class="row profile">
+                <div class="col-md-3">
+                    <div class="profile-sidebar">
+                        <!-- SIDEBAR USERPIC -->
+                        <div class="profile-userpic">
+                            <img src="https://scontent.fphx1-2.fna.fbcdn.net/v/t31.0-8/19780340_10213169583744484_1419970592768067273_o.jpg?oh=0b0eb8138c70356160093ff60d721002&oe=5A35958E" class="img-responsive" alt="">
+                        </div>
+                        <!-- END SIDEBAR USERPIC -->
+                        <!-- SIDEBAR USER TITLE -->
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name">
+                                <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
+                                Andrew Sutjeda
+                            </div>
+                            <div class="profile-usertitle-job">
+                                <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
+                                Developer
+                            </div>
+                        </div>
+                        <!-- END SIDEBAR USER TITLE -->
+                        <!-- SIDEBAR BUTTONS -->
+                        <!--    <div class="profile-userbuttons">
+                    <button type="button" class="btn btn-success btn-sm">Follow</button>
+                    <button type="button" class="btn btn-danger btn-sm">Message</button>
+                </div> -->
+                        <!-- END SIDEBAR BUTTONS -->
+                        <!-- SIDEBAR MENU -->
+                        <div class="profile-usermenu">
+                            <ul class="nav">
+                                <li class="active">
+                                    <!-- ///////////////////////////////////   MODAl #1   ////////////////////-->
+                                    <!-- Trigger/Open The Modal -->
+                                    <button class="myBtn_multi">
+                                        <!-- Modal 1 -->
+                                        <i class="glyphicon glyphicon-plus"></i> Create New Challenge
+                                    </button>
+                                    <div class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <br>
+                                <!-- /////////////////////////////////////   MODAL #2   //////////////////////-->
+                                <li>
+                                    <i class="glyphicon glyphicon-arrow-right"></i> Join Challenge
+                                </li>
+                                <br>
+                                <!-- /////////////////////////////////////   MODAL #3  ///////////////////////-->
+                                <li>
+                                    <button class="myBtn_multi">
+                                        <!-- Modal 3 -->
+                                        <i class="glyphicon glyphicon-user">
+                                                </i> friends
+                                    </button>
+                                    <div class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <br>
+                                <!-- /////////////////////////////////////   MODAL #4    /////////////////////-->
+                                <li>
+                                    <!-- Trigger/Open The Modal -->
+                                    <button class="myBtn_multi">
+                                        <i class="glyphicon glyphicon-option-vertical"></i> Challenges Won
+                                    </button>
+                                    <div class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <br>
+                                <!-- ///////////////////////////////////////   MODAL #5 //////////////////////-->
+                                <li>
+                                    <!-- Trigger/Open The Modal -->
+                                    <button class="myBtn_multi">
+                                        <i class="glyphicon glyphicon-menu-hamburger"></i> Challenge Rules
+                                    </button>
+                                    <div class="modal modal_multi">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END MENU -->
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="profile-content">
+                        <div class="page-header">
+                            <h1>(Challenge Name Here)</h1>
+                        </div>
+                        <!--/////////////// USER #1 /////////////////////////////////////////////////-->
+                        <div class="profile-header-container">
+                            <div id="prof-pic" class="profile-header-img">
+                                <div id="update" class="col-xs-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                              <button class="btn btn-default" type="button">Update Progress!</button>
+                                            </span>
+                                    </div>
+                                </div>
+                                <img id="picture" class="img-circle" src="http://robbiedelfs.codes/wp-content/uploads/2016/08/27bafbe-3.jpg" />
+                                <!-- badge -->
+                                <div class="rank-label-container">
+                                    <span class="label label-default rank-label">Robbie Delfs</span>
+                                    <br>
+                                    <div class="progress progress-striped active" id="progressouter">
+                                        <div class="bar" id="progress"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/////////////// USER #2 /////////////////////////////////////////////////-->
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </dir>
+        <!-- Container Close -->
+    </div>
+    <br>
+    <br>
+</body>
+<script type="text/javascript">
+var modalparent = document.getElementsByClassName("modal_multi");
+
+// Get the button that opens the modal
+
+var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
+
+// Get the <span> element that closes the modal
+var span_close_multi = document.getElementsByClassName("close_multi");
+
+// When the user clicks the button, open the modal
+function setDataIndex() {
+
+    for (i = 0; i < modal_btn_multi.length; i++) {
+        modal_btn_multi[i].setAttribute('data-index', i);
+        modalparent[i].setAttribute('data-index', i);
+        span_close_multi[i].setAttribute('data-index', i);
+    }
+}
+
+
+
+for (i = 0; i < modal_btn_multi.length; i++) {
+    modal_btn_multi[i].onclick = function() {
+        var ElementIndex = this.getAttribute('data-index');
+        modalparent[ElementIndex].style.display = "block";
+    };
+
+    // When the user clicks on <span> (x), close the modal
+    span_close_multi[i].onclick = function() {
+        var ElementIndex = this.getAttribute('data-index');
+        modalparent[ElementIndex].style.display = "none";
+    };
+
+}
+
+window.onload = function() {
+
+    setDataIndex();
+};
+
+window.onclick = function(event) {
+    if (event.target === modalparent[event.target.getAttribute('data-index')]) {
+        modalparent[event.target.getAttribute('data-index')].style.display = "none";
+    }
+
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+
+// Get the modal
+
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = modal.getElementsByClassName("close")[0]; // Modified by dsones uk
+
+// When the user clicks on the button, open the modal
+
+btn.onclick = function() {
+
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+
+//JQuery For Progress Bar//
+$(document).ready(function() {
+    var progresspump = setInterval(function() {
+        /* query the completion percentage from the server */
+        $.get("/app/update-progress", function(data) {
+            /* update the progress bar width */
+            $("#progress").css('width', data + '%');
+            /* and display the numeric value */
+            $("#progress").html(data + '%');
+
+            /* test to see if the job has completed */
+            if (data > 99.999) {
+                clearInterval(progresspump);
+                $("#progressouter").removeClass("active");
+                $("#progress").html("Done");
+            }
+        })
+    }, 1000);
+});
+</script>

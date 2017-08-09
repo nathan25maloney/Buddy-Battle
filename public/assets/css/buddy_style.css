@@ -1,6 +1,13 @@
 /*    --------------------------------------------------
     :: Login Section
     -------------------------------------------------- */
+#logo {
+    height: 300px;
+    width: 300px;
+    margin-left: 470px;
+
+}
+
 #login {
     padding-top: 50px
 }
@@ -9,7 +16,7 @@
     margin: 0 auto;
 }
 #login h1 {
-    color: #1fa67b;
+    color: black;
     font-size: 18px;
     text-align: center;
     font-weight: bold;
@@ -29,7 +36,7 @@
 }
 #login .checkbox.show:before {
     content: '\e013';
-    color: #1fa67b;
+    color: black;
     font-size: 17px;
     margin: 1px 0 0 3px;
     position: absolute;
@@ -46,7 +53,7 @@
     display: inline-block;
 }
 #login .checkbox .label {
-    color: #6d6d6d;
+    color: black;
     font-size: 13px;
     font-weight: normal;
 }
@@ -68,7 +75,7 @@
 }
 .btn-custom {
     color: #fff;
-    background-color: #1fa67b;
+    background-color: black;
 }
 .btn-custom:hover,
 .btn-custom:focus {
@@ -79,7 +86,7 @@
     :: Footer
     -------------------------------------------------- */
 #footer {
-    color: #6d6d6d;
+    color: black;
     font-size: 12px;
     text-align: center;
 }
@@ -95,8 +102,22 @@ Dashboard CSS
 /*----------------------------------------------------------------------------------------------*
 /* Profile container */
 
+a {
+  color: blue;
+  text-decoration: none; /* no underline */
+}
+
 .profile {
   margin: 20px 0;
+}
+
+#profile-img {
+    height: 100px;
+    width: 100px;
+}
+
+#friend-name {
+    padding-left: 10px;
 }
 
 /* Profile sidebar */
@@ -202,45 +223,77 @@ Dashboard CSS
     :: Modals
     -------------------------------------------------- */
 /* The Modal (background) */
-button {
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 65%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        button {
  padding: 0;
 border: none;
 background: none;
 }
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+/*    --------------------------------------------------
+    :: progress bar
+    -------------------------------------------------- */
+#progress {
+    float: left;
 }
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+#picture {
+    height: 75px;
+    width: 75px;
 }
 
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
+.btn-btn-primary {
     color: black;
-    text-decoration: none;
-    cursor: pointer;
+}
+
+#update {
+    float: right;
+    margin-top: 30px;
+    margin-right: 100px;
+    z-index: 0;
+}
+
+/*    --------------------------------------------------
+    Modal 4
+    -------------------------------------------------- */
+
+  #winner-pic {
+    height: 100px;
+    width: 100px;
 }
