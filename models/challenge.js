@@ -55,7 +55,7 @@ module.exports = function(sequelize, DataTypes) {
      // Challenge should have one User as the winner
     Challenge.belongsTo(models.User, {
       foreignKey: {
-        as: "winner"
+        as: "winner",
         name: "winner_id",
         allowNull: true
       }

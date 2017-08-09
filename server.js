@@ -13,7 +13,7 @@ var db = require("./models");
 var passport = require('passport');
 var flash    = require('connect-flash');
 
-require('./config/passport')(passport);
+// require('./config/passport')(passport);
 
 app.use(cookieParser());
 
@@ -42,8 +42,6 @@ app.use(flash());
 
 // Import routes and give the server access to them.
 require("./controllers/buddy_controller.js")(app, passport);
-
-app.use("/", routes);
 
 
 db.sequelize.sync({force:true}).then(function() {

@@ -11,21 +11,21 @@ module.exports = function(app) {
 	  	res.render('index'); // load index page
 	});
 
-	// log user in
-	app.post("/login", function(req, res) {
+	// // log user in
+	// app.post("/login", function(req, res) {
 	 
-	});
+	// });
 
 	// user dashboard
 	// displays all challenges associated with the user
 	app.get("/dashboard", function(req, res) {
-	  	
+	  	res.render('dashboard'); // load index page
 	});
 
 	// displays information on a single challenge
 	// displays all participants and their scores
 	app.get("/challenge", function(req, res) {
-	  	
+	  	res.render('challenge'); // load index page
 	});
 
 	// ========================
