@@ -44,7 +44,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); 
 
 
-require('./config/passport')(passport);
+
 
 require('./config/passport.js')(passport, db.User);
 
