@@ -11,34 +11,21 @@ module.exports = function(app) {
 	  	res.render('index'); // load index page
 	});
 
-
-	// log user in
-	app.post("/login", function(req, res) {
-	 
-	});
-
-
 	// user dashboard
 	// displays all challenges associated with the user
 	app.get("/dashboard", function(req, res) {
-
-	  	
-
 	  	res.render('dashboard'); // load index page
-
 	});
 
 	// displays information on a single challenge
 	// displays all participants and their scores
 	app.get("/challenge", function(req, res) {
-
 	  	res.render('challenge'); // load index page
 	});
 
 	// ========================
 	// API (/api)
 	// ========================
-
 
 	// USER
 	// get all challenges by user id
@@ -200,6 +187,7 @@ function isLoggedIn(req, res, next) {
 	res.redirect('/');
 }
 
+// TODO: finish this and add to score update api calls
 // update winner_id everytime score is added/changed
 function updateWinner(id) {
 	db.Score.findAll({
