@@ -13,7 +13,10 @@ var db = require("./models");
 var passport = require('passport');
 var flash    = require('connect-flash');
 
-require('./config/passport')(passport);
+
+
+
+
 
 app.use(cookieParser());
 
@@ -40,23 +43,29 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); 
 
-require('./config/passport.js')(passport, db.User);
 
-var authRoute = require('./controllers/auth.js')(app, passport);
+require('./config/passport')(passport);
+
+require('./config/passport.js')(passport, db.User);
 
 // Import routes and give the server access to them.
 
+var authRoute = require('./controllers/auth.js')(app, passport);
 
 
 
 
 
-db.sequelize.sync().then(function() {
+
+
+db.sequelize.sync({force: true}).then(function() {
   app.listen(port, function() {
     console.log("App listening on PORT " + port);
   });
+
 }).catch(function(err) {
  
     console.log(err, "Something went wrong with the Database Update!")
  
 });
+

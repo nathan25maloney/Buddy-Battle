@@ -14,6 +14,8 @@ module.exports = function(passport, user) {
     
  
     var User = user;
+
+    console.log("User: "+User);
  
     var LocalStrategy = require('passport-local').Strategy;
 
@@ -26,6 +28,8 @@ module.exports = function(passport, user) {
     passport.deserializeUser(function(id, done) {
  
     console.log("passport deserializeUser"); 
+    console.log("User: "+user);
+    console.log("id: " +id);
     User.findById(id).then(function(user) {
  
             if (user) {
@@ -45,38 +49,31 @@ module.exports = function(passport, user) {
  
     passport.use('local-signup', new LocalStrategy(
         
-        {
- 
-            usernameField: 'userName',
- 
-            passwordField: 'password',
- 
-            passReqToCallback: true // allows us to pass back the entire request to the callback
- 
-        },
- 
     
  
-        function(req, userName, password, done) {
+        function(userName, passWord, done) {
             console.log("made it to local-signup");
+
             var generateHash = function(password) {
  
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
  
             };
- 
-            console.log(userName);
+            
+            console.log("username: " +userName);
+            console.log("password: "+ passWord)
+            console.log("done: "+done);
  
             User.findOne({
                 where: {
                     username: userName
                 }
             }).then(function(user) {
- 
+                
                 if (user)
- 
+                    
                 {
- 
+                    console.log("If user: " + user)
                     return done(null, false, {
                         message: 'That username is already taken'
                     });
@@ -84,22 +81,22 @@ module.exports = function(passport, user) {
                 } else
  
                 {
- 
-                    var userPassword = generateHash(password);
- 
+                    
+
+                    var userPassword = generateHash(userName);
+                    console.log("encrypted password: " + userPassword);
                     var data =
  
                         {
-                            name: req.body.name,
 
                             username: userName,
  
                             password: userPassword                       
  
                         };
- 
+                    console.log(data);
                     User.create(data).then(function(newUser, created) {
-                        console.log(data);
+                        
                         if (!newUser) {
  
                             return done(null, false);
@@ -121,5 +118,56 @@ module.exports = function(passport, user) {
         }
  
     ));
+
+    passport.use('local-signin',new LocalStrategy(
+
+      function(username, password, done) {
+        
+ 
+        var User = user;
+ 
+        var isValidPassword = function(userpass, password) {
+ 
+            return bCrypt.compareSync(password, userpass);
+ 
+        }
+ 
+        User.findOne({
+            where: {
+                username: username
+            }
+        }).then(function(user) {
+ 
+            if (!user) {
+ 
+                return done(null, false, {
+                    message: 'username does not exist'
+                });
+ 
+            }
+ 
+            if (!isValidPassword(user.password, password)) {
+ 
+                return done(null, false, {
+                    message: 'Incorrect password.'
+                });
+ 
+            }
+ 
+ 
+            var userinfo = user.get();
+            return done(null, userinfo);
+ 
+ 
+        }).catch(function(err) {
+ 
+            console.log("Error:", err);
+ 
+            return done(null, false, {
+                message: 'Something went wrong with your Signin'
+            });
+ 
+        });
+    }));
  
 }
