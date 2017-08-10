@@ -42,25 +42,43 @@
                                             <span class="close close_multi">×</span>
                                             <div class="form-group">
                                                 <label for="name">Challenge Name</label>
-                                                <input type="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
+                                               <!-- HANDLEBARS-->  <input type="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleTextarea">Description of Challenge</label>
-                                                <textarea class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
+                                               <!-- HANDLEBARS-->  <textarea class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
                                             </div>
                                              <div class="form-group">
-                                                <label for="metric">What are you measuring?</label>
+                                              <!-- HANDLEBARS-->   <label for="metric">What are you measuring?</label>
                                                 <input type="metric" class="form-control" placeholder="i.e. # of tacos">
                                             </div>
-                                            
-
+                                             <label class="demoHeaders">Datepicker</label>
+                                                <input type="text" id="datepicker">
+                                                <p>(Challenge ends at midnight of the date selected!)</p>
+                    <!-- HANDLEBARS-->     <button id="submit-challenge" align="right" class="btn btn-default" type="submit">Create your challenge!</button>
                                         </div>
                                     </div>
                                 </li>
                                 <br>
                                 <!-- /////////////////////////////////////   MODAL #2   //////////////////////-->
                                 <li>
-                                        <button class="btn"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button>
+                                         <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button>
+                                        <div class="modal modal_multi">
+
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <span class="close close_multi">×</span>
+                                                <h3>Enter in your unique challenge code:</h3>
+                                            <!-- HANDLEBARS-->    <div class="input-group">
+                                                  <input id="code" type="text" class="form-control" placeholder="XXXX">
+                                                  <span class="input-group-btn">
+                                                    <button class="btn btn-secondary" type="button">Go!</button>
+                                                  </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
                                 </li>
                                 <br>
                                 <!-- /////////////////////////////////////   MODAL #3  ///////////////////////-->
@@ -76,10 +94,10 @@
                                             <span class="close close_multi">×</span>
                                             <div class="profile-header-container">
                                                 <div class="profile-header-img">
-                                                    <img class="img-circle" id="profile-img" src="http://robbiedelfs.codes/wp-content/uploads/2016/08/27bafbe-3.jpg" />
+                                                    <img class="img-circle" id="profile-img" src="http://www.hmcoloringpages.com/wp-content/uploads/person-silhouette-9.gif" />
                                                     <!-- badge -->
                                                     <div class="rank-label-container">
-                                                        <span id="friend-name" class="label label-default rank-label">Robbie Delfs</span>
+                                                    <span id="friend-name" class="label label-default rank-label">Robbie Delfs</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -99,7 +117,7 @@
                                             <span class="close close_multi">×</span>
                                             <div class="profile-header-container">
                                                 <div class="profile-header-img">
-                                                    <img class="img-oval" id="winner-pic" src="http://s.eatthis-cdn.com/media/images/ext/102501580/taco-bell-shredded-chicken-soft-taco-md.jpg" />
+                                                    <img class="img-oval" id="winner-pic" src="http://www.psdgraphics.com/file/trophy-award-icon.jpg" />
                                                     <!-- badge -->
                                                     <div class="rank-label-container">
                                                         <span class="label label-default rank-label">Taco Showdown!</span>
@@ -124,14 +142,26 @@
                                             <hr>
                                             <h4>What is Buddy Battle?</h4>
                                             <p>Buddy battle is an application that let's you challenge friends to a competition of your choice!</p>
-
-
-
+                                            <h4>How do I create a challenge?</h4>
+                                            <p>In the user dashboard click the "+ crete challenge" icon and fill in each section to create your challenge</p>
+                                            <h4>How do Invite my Friends to a challenge?</h4>
+                                            <p>After you create a challenge, you will be given a unique challenge code. Give that code to the friends you want to invite to your challenge. your friends will then click the "Join Challnge" tab on their user dashboard and enter in the challenge code you gave them and voila! they have joined!</p>
+                                            <h4>How do I win a challenge?</h4>
+                                            <p>You have to be the first friend to reach the goal, whether its eating the most tacos, drinking the most beer, or most girls talked to, try your best before midnight on the day the challenge ends!</p>
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
+                                <br>
+            <!-- ///////////////////////////////////////   Logout Button //////////////////////-->
+                                    <li>
+                                    <button id="sign-out">
+                                        <i class="glyphicon glyphicon-arrow-left"></i> Log Out
+                                    </button>
+                                    </li>
+                                    </ul>
+                                </div>
+                   
+
                         <!-- END MENU -->
                     </div>
                 </div>
