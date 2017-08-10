@@ -53,12 +53,16 @@ require('./config/passport.js')(passport, db.User);
 var authRoute = require('./controllers/auth.js')(app, passport);
 
 
+<<<<<<< Updated upstream
 
 
 
 
 
 db.sequelize.sync({force: true}).then(function() {
+=======
+db.sequelize.sync({force:false}).then(function() {
+>>>>>>> Stashed changes
   app.listen(port, function() {
     console.log("App listening on PORT " + port);
   });
