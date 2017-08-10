@@ -122,12 +122,14 @@ module.exports = function(passport, user) {
     passport.use('local-signin',new LocalStrategy(
 
       function(username, password, done) {
-        
+        console.log("username: "+username);
+        console.log("password: "+ password);
+        console.log("done: "+ done);
  
         var User = user;
  
         var isValidPassword = function(userpass, password) {
- 
+            console.log(bCrypt.compareSync(password, userpass))
             return bCrypt.compareSync(password, userpass);
  
         }
