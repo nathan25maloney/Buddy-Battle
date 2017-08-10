@@ -16,7 +16,7 @@
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "Valente1",
     "database": "buddy_battle_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
