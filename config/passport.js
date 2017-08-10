@@ -83,7 +83,7 @@ module.exports = function(passport, user) {
                 {
                     
 
-                    var userPassword = generateHash(userName);
+                    var userPassword = generateHash(passWord);
                     console.log("encrypted password: " + userPassword);
                     var data =
  
@@ -123,13 +123,15 @@ module.exports = function(passport, user) {
 
       function(username, password, done) {
         console.log("username: "+username);
+
         console.log("password: "+ password);
         console.log("done: "+ done);
  
         var User = user;
  
         var isValidPassword = function(userpass, password) {
-            console.log(bCrypt.compareSync(password, userpass))
+        
+            
             return bCrypt.compareSync(password, userpass);
  
         }
@@ -149,7 +151,7 @@ module.exports = function(passport, user) {
             }
  
             if (!isValidPassword(user.password, password)) {
- 
+                
                 return done(null, false, {
                     message: 'Incorrect password.'
                 });

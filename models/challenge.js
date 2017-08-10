@@ -28,7 +28,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: [1]
-      }
+      },
+      unique: true
     }
   });
 
@@ -45,9 +46,9 @@ module.exports = function(sequelize, DataTypes) {
 
     // Challenge should have multiple Users as participants
     Challenge.belongsToMany(models.User, {
-      through: models.UserChallenge,
+      through: models.Score,
       foreignKey: {
-        name: "user_id",
+        name: "challenge_id",
         allowNull: false
       }
     });
