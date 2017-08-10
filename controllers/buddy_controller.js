@@ -107,7 +107,7 @@ module.exports = function(app) {
 				description: "this is a challenge",
 				measurement: "# of tacos",
 				deadline: new Date(),
-				gameCode: "QQQQQ",
+				gameCode: createCode(),
 				creator_id: user.id
 			}).then(function(challenge) {
 				// add user as participant in challenge
@@ -185,6 +185,16 @@ function isLoggedIn(req, res, next) {
 
 	// if they aren't redirect them to the home page
 	res.redirect('/');
+}
+
+function createCode() {
+  var code = "";
+  var alphanum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 4; i++)
+    code += alphanum.charAt(Math.floor(Math.random() * alphanum.length));
+
+  return code;
 }
 
 // TODO: finish this and add to score update api calls
