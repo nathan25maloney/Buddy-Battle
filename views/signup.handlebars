@@ -1,9 +1,60 @@
+<div>
+    <img id="logo" src="/assets/images/buddyBattleLogo.png">
+</div>
 
-    <form id="signup" name="signup" method="post" action="/signup">
-        <label for="username">Your Username</label>
-        <input name="username" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign Up" />
-    </form>
- 
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-wrap">
+                <h1>Sign up now to battle your buddies!</h1>
+           		 <form id="signup" name="signup" method="post" action="/signup">
+			        <span><label for="username">Username</label>
+			        <input class="text" name="username" type="text" /></span>
+			        <br>
+			        <span><label for="password">Password</label>
+			        <input name="password" type="password" /></span>
+			        <br>
+			        <center><input class="btn" type="submit" value="Sign In" /></center>
+			    </form>
+                    <hr>
+                </div>
+            </div> <!-- /.col-xs-12 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
+
+<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Recovery password</h4>
+            </div>
+            <div class="modal-body">
+                <p>Type your email account</p>
+                <input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-custom">Recovery</button>
+            </div>
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Catherine Liu - Nathan Maloney - Kevin Valente © 2017</p>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="\assets\js\login.js"></script>
