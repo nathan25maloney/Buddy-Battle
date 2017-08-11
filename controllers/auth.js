@@ -28,6 +28,10 @@ module.exports = function(app, passport) {
  
     ));
 
+    app.get("/api/user/:id", isLoggedIn, authcontroller.userchallenges); 
+    
+    app.get("/challenge", isLoggedIn, authcontroller.challenge);
+
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
     app.get('/logout',authController.logout)

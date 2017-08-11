@@ -50,7 +50,7 @@ require('./config/passport.js')(passport, db.User);
 
 // Import routes and give the server access to them.
 
-var authRoute = require('./controllers/auth.js')(app, passport);
+require('./controllers/auth.js')(app, passport);
 
 
 
