@@ -1,5 +1,5 @@
 <div class="container">
-        <dir id="wrapBox">
+        <div id="wrapBox">
             <div class="row profile">
                 <div class="col-md-3">
                     <div class="profile-sidebar">
@@ -20,17 +20,11 @@
                             </div>
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
-                        <!-- SIDEBAR BUTTONS -->
-                        <!--    <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-success btn-sm">Follow</button>
-                    <button type="button" class="btn btn-danger btn-sm">Message</button>
-                </div> -->
-                        <!-- END SIDEBAR BUTTONS -->
                         <!-- SIDEBAR MENU -->
                         <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <!-- ///////////////////////////////////   MODAl #1   ////////////////////-->
+                                    <!-- /   MODAl #1   /-->
                                     <!-- Trigger/Open The Modal -->
                                     <button class="myBtn_multi">
                                         <!-- Modal 1 -->
@@ -60,7 +54,7 @@
                                     </div>
                                 </li>
                                 <br>
-                                <!-- /////////////////////////////////////   MODAL #2   //////////////////////-->
+                                <!-- //   MODAL #2   //-->
                                 <li>
                                          <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button>
                                         <div class="modal modal_multi">
@@ -81,7 +75,7 @@
 
                                 </li>
                                 <br>
-                                <!-- /////////////////////////////////////   MODAL #3  ///////////////////////-->
+                                <!-- ///   MODAL #3   ///-->
                                 <li>
                                     <button class="myBtn_multi">
                                         <!-- Modal 3 -->
@@ -105,7 +99,7 @@
                                     </div>
                                 </li>
                                 <br>
-                                <!-- /////////////////////////////////////   MODAL #4    /////////////////////-->
+                                <!-- /////////////   MODAL #4    /////////-->
                                 <li>
                                     <!-- Trigger/Open The Modal -->
                                     <button class="myBtn_multi">
@@ -128,7 +122,7 @@
                                     </div>
                                 </li>
                                 <br>
-                                <!-- ///////////////////////////////////////   MODAL #5 //////////////////////-->
+                                <!-- //////   MODAL #5   /////-->
                                 <li>
                                     <!-- Trigger/Open The Modal -->
                                     <button class="myBtn_multi">
@@ -152,7 +146,7 @@
                                     </div>
                                 </li>
                                 <br>
-            <!-- ///////////////////////////////////////   Logout Button //////////////////////-->
+            <!-- ///////////   Logout Button //////////-->
                                     <li>
                                     <button id="sign-out">
                                         <i class="glyphicon glyphicon-arrow-left"></i> Log Out
@@ -168,7 +162,7 @@
                         <div class="page-header">
                             <h1>(Challenge Name Here)</h1>
                         </div>
-                        <!--/////////////// USER #1 /////////////////////////////////////////////////-->
+                        <!--/////////////// USER #1 ///////////////-->
                         <div class="profile-header-container">
                             <div id="prof-pic" class="profile-header-img">
                                 <div id="update" class="col-xs-8">
@@ -191,7 +185,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--/////////////// USER #2 /////////////////////////////////////////////////-->
+                        <!--//////// USER #2 ////////-->
                        </div>
                     </div>
                 </div>
@@ -202,3 +196,17 @@
     <br>
     <br>
 <script src="\assets\js\challenge.js"></script>
+
+
+
+{{#each users}}
+      <li>
+        {{this.name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="sleepy" value="true">
+          <button type="submit">SLEEP TIME!</button>
+        </form>
+
+      </li>
+  {{/each}}

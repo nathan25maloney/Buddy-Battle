@@ -24,8 +24,12 @@ exports.dashboard = function(req,res) {
     }).then(function(user) {
         // get all challenges and scores
         user.getChallenges().then(function(challenges) {
-            console.log(user);
-            res.render('dashboard', {user: req.user,challenges});
+            let context = {
+                user: req.user,
+                challenges
+            };
+            console.log("Context for /dashboard:",context);
+            res.render('dashboard', context);
         });
     });
 }
@@ -39,8 +43,12 @@ exports.challenge = function(req,res) {
     }).then(function(challenge) {
         // get all users and scores
         challenge.getUsers().then(function(users) {
-            console.log("Challenge", challenge);
-            res.render('challenge', { challenge, users});
+            let context = {
+                challenge,
+                users
+            };
+            console.log("Context for /challenge:",context);
+            res.render('challenge', context);
         });
     });
 	
