@@ -94,7 +94,7 @@ exports.joinChallenge = function(req, res) {
             // find challenge
             db.Challenge.findOne({
                 where: { 
-                    gameCode: "QQQQ1"
+                    gameCode: createCode();
                 }
             }).then(function(challenge) {
                 // add user as participant in challenge
