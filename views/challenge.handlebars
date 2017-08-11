@@ -5,123 +5,121 @@
                     <div class="profile-sidebar">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
-                            <img src="https://scontent.fphx1-2.fna.fbcdn.net/v/t31.0-8/19780340_10213169583744484_1419970592768067273_o.jpg?oh=0b0eb8138c70356160093ff60d721002&oe=5A35958E" class="img-responsive" alt="">
+                            <img src="person-silhouette.gif" class="img-responsive" alt="">
                         </div>
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->
                         <div class="profile-usertitle">
                             <div class="profile-usertitle-name">
                                 <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
-                                Andrew Sutjeda
-                            </div>
-                            <div class="profile-usertitle-job">
-                                <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
-                                Developer
+                                {{user.username}}
                             </div>
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR MENU -->
                         <div class="profile-usermenu">
                             <ul class="nav">
-                                <li class="active">
-                                    <!-- /   MODAl #1   /-->
+                                <!-- <li class="active"> -->
+                                     <!-- /   MODAl #1   / -->
                                     <!-- Trigger/Open The Modal -->
-                                    <button class="myBtn_multi">
+<!--                                     <button class="myBtn_multi"> -->
                                         <!-- Modal 1 -->
-                                        <i class="glyphicon glyphicon-plus"></i> Create New Challenge
-                                    </button>
-                                    <div class="modal modal_multi">
+<!--                                         <i class="glyphicon glyphicon-plus"></i> Create New Challenge -->
+<!--                                     </button> -->
+<!--                                     <div class="modal modal_multi"> -->
                                         <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <div class="form-group">
-                                                <label for="name">Challenge Name</label>
-                                               <!-- HANDLEBARS-->  <input type="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleTextarea">Description of Challenge</label>
-                                               <!-- HANDLEBARS-->  <textarea class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
-                                            </div>
-                                             <div class="form-group">
-                                              <!-- HANDLEBARS-->   <label for="metric">What are you measuring?</label>
-                                                <input type="metric" class="form-control" placeholder="i.e. # of tacos">
-                                            </div>
-                                             <label class="demoHeaders">Datepicker</label>
-                                                <input type="text" id="datepicker">
-                                                <p>(Challenge ends at midnight of the date selected!)</p>
-                    <!-- HANDLEBARS-->     <button id="submit-challenge" align="right" class="btn btn-default" type="submit">Create your challenge!</button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
+<!--                                         <div class="modal-content"> -->
+<!--                                             <span class="close close_multi">×</span> -->
+<!--                                             <div class="form-group"> -->
+<!--                                                 <label for="name">Challenge Name</label> -->
+                                                <!-- HANDLEBARS  <input type="name" class="form-control" placeholder="i.e. Taco Eating Showdown!"> -->
+<!--                                             </div> -->
+<!--                                             <div class="form-group"> -->
+<!--                                                 <label for="exampleTextarea">Description of Challenge</label> -->
+                                                <!-- HANDLEBARS  <textarea class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea> -->
+<!--                                             </div> -->
+<!--                                              <div class="form-group"> -->
+                                               <!-- HANDLEBARS   <label for="metric">What are you measuring?</label> -->
+<!--                                                 <input type="metric" class="form-control" placeholder="i.e. # of tacos"> -->
+<!--                                             </div> -->
+<!--                                              <label class="demoHeaders">Datepicker</label> -->
+<!--                                                 <input type="text" id="datepicker"> -->
+<!--                                                 <p>(Challenge ends at midnight of the date selected!)</p> -->
+                     <!-- HANDLEBARS     <button id="submit-challenge" align="right" class="btn btn-default" type="submit">Create your challenge!</button> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </li> -->
+<!--                                 <br> -->
                                 <!-- //   MODAL #2   //-->
-                                <li>
-                                         <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button>
-                                        <div class="modal modal_multi">
-
+                                <!-- <li> -->
+<!--                                          <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button> -->
+<!--                                         <div class="modal modal_multi"> -->
+<!--  -->
                                             <!-- Modal content -->
-                                            <div class="modal-content">
-                                                <span class="close close_multi">×</span>
-                                                <h3>Enter in your unique challenge code:</h3>
-                                            <!-- HANDLEBARS-->    <div class="input-group">
-                                                  <input id="code" type="text" class="form-control" placeholder="XXXX">
-                                                  <span class="input-group-btn">
-                                                    <button class="btn btn-secondary" type="button">Go!</button>
-                                                  </span>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                </li>
-                                <br>
+<!--                                             <div class="modal-content"> -->
+<!--                                                 <span class="close close_multi">×</span> -->
+<!--                                                 <h3>Enter in your unique challenge code:</h3> -->
+                                             <!-- HANDLEBARS    <div class="input-group"> -->
+<!--                                                   <input id="code" type="text" class="form-control" placeholder="XXXX"> -->
+<!--                                                   <span class="input-group-btn"> -->
+<!--                                                     <button class="btn btn-secondary" type="button">Go!</button> -->
+<!--                                                   </span> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--  -->
+<!--                                         </div> -->
+<!--  -->
+<!--                                 </li> -->
+<!--                                 <br> -->
                                 <!-- ///   MODAL #3   ///-->
-                                <li>
-                                    <button class="myBtn_multi">
+                                <!-- <li> -->
+<!--                                     <button class="myBtn_multi"> -->
                                         <!-- Modal 3 -->
-                                        <i class="glyphicon glyphicon-user">
-                                                </i> friends
-                                    </button>
-                                    <div class="modal modal_multi">
+<!--                                         <i class="glyphicon glyphicon-user"> -->
+<!--                                                 </i> friends -->
+<!--                                     </button> -->
+<!--                                     <div class="modal modal_multi"> -->
                                         <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <div class="profile-header-container">
-                                                <div class="profile-header-img">
-                                                    <img class="img-circle" id="profile-img" src="http://www.hmcoloringpages.com/wp-content/uploads/person-silhouette-9.gif" />
+<!--                                         <div class="modal-content"> -->
+<!--                                             <span class="close close_multi">×</span> -->
+<!--                                             <div class="profile-header-container"> -->
+<!--                                                 <div class="profile-header-img"> -->
+<!--                                                     <img class="img-circle" id="profile-img" src="http://www.hmcoloringpages.com/wp-content/uploads/person-silhouette-9.gif" /> -->
                                                     <!-- badge -->
-                                                    <div class="rank-label-container">
-                                                    <span id="friend-name" class="label label-default rank-label">Robbie Delfs</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
-                                <!-- /////////////   MODAL #4    /////////-->
-                                <li>
+<!--                                                     <div class="rank-label-container"> -->
+<!--                                                     <span id="friend-name" class="label label-default rank-label">Robbie Delfs</span> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </li> -->
+<!--                                 <br> -->
+                                 <!-- /////////////   MODAL #4    ///////// -->
+<!--                                 <li> -->
                                     <!-- Trigger/Open The Modal -->
-                                    <button class="myBtn_multi">
-                                        <i class="glyphicon glyphicon-option-vertical"></i> Challenges Won
-                                    </button>
-                                    <div class="modal modal_multi">
+<!--                                     <button class="myBtn_multi"> -->
+<!--                                         <i class="glyphicon glyphicon-option-vertical"></i> Challenges Won -->
+<!--                                     </button> -->
+<!--                                     <div class="modal modal_multi"> -->
                                         <!-- Modal content -->
+
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <div class="profile-header-container">
                                                 <div class="profile-header-img">
-                                                    <img class="img-oval" id="winner-pic" src="http://www.psdgraphics.com/file/trophy-award-icon.jpg" />
+                                                    <img class="/assets/images/trophy.jpeg" />
+
                                                     <!-- badge -->
-                                                    <div class="rank-label-container">
-                                                        <span class="label label-default rank-label">Taco Showdown!</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
+<!--                                                     <div class="rank-label-container"> -->
+<!--                                                         <span class="label label-default rank-label">Taco Showdown!</span> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </li> -->
+<!--                                 <br> -->
                                 <!-- //////   MODAL #5   /////-->
                                 <li>
                                     <!-- Trigger/Open The Modal -->
@@ -162,6 +160,19 @@
                         <div class="page-header">
                             <h1>(Challenge Name Here)</h1>
                         </div>
+                        {{#each users}}
+                          <li>
+                            {{this.dataValues.username}}
+                            
+
+                            {{#if this.dataValues.id user.id}}
+                            <form action="/{{this.id}}?_method=PUT" method="POST">
+                              <input type="hidden" name="sleepy" value="true">
+                              <button type="submit">SLEEP TIME!</button>
+                            </form>
+
+                          </li>
+                      {{/each}}
                         <!--/////////////// USER #1 ///////////////-->
                         <div class="profile-header-container">
                             <div id="prof-pic" class="profile-header-img">
@@ -196,17 +207,3 @@
     <br>
     <br>
 <script src="\assets\js\challenge.js"></script>
-
-
-
-{{#each users}}
-      <li>
-        {{this.name}}
-
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="true">
-          <button type="submit">SLEEP TIME!</button>
-        </form>
-
-      </li>
-  {{/each}}

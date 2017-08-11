@@ -28,7 +28,7 @@ exports.dashboard = function(req,res) {
                 user: req.user,
                 challenges: challenges
             };
-            console.log("Context for /dashboard:",context);
+            console.log("Context for /dashbaord:",context);
             res.render('dashboard', context);
         });
     });
@@ -38,7 +38,7 @@ exports.challenge = function(req,res) {
     // find challenge by id
     db.Challenge.findOne({
         where: {
-            id: req.params.id
+            id: 1
         }
     }).then(function(challenge) {
         // get all users and scores
