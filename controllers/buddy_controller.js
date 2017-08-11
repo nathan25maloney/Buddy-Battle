@@ -14,7 +14,17 @@ module.exports = function(app) {
 	// user dashboard
 	// displays all challenges associated with the user
 	app.get("/dashboard", function(req, res) {
-	  	res.render('dashboard'); // load index page
+		// find user by id
+		db.User.findOne({
+			where: {
+				id: 1
+			}
+		}).then(function(user) {
+			// get all challenges and scores
+			user.getChallenges().then(function(challenges) {
+				res.render('dashboard', {user,challenges});
+			});
+		});
 	});
 
 	// displays information on a single challenge
@@ -30,17 +40,7 @@ module.exports = function(app) {
 	// USER
 	// get all challenges by user id
 	app.get("/api/user/:id", function(req, res) {
-		// find user by id
-		db.User.findOne({
-			where: {
-				id: req.params.id
-			}
-		}).then(function(user) {
-			// get all users and scores
-			user.getChallenges().then(function(challenges) {
-				res.json({user,challenges});
-			});
-		});
+		
 	});
 
 	// create new user
