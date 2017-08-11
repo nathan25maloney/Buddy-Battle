@@ -48,12 +48,16 @@ exports.challenge = function(req,res) {
 
 exports.newChallenge = function(req, res) {
         // find user
+        console.log("find user");
         db.User.findOne({
             where: {
-                id: req.id
+                id: req.user.id
             }
         }).then(function(user) {
             // create challenge
+            console.log("user: " + user);
+            console.log("req: " + req);
+
             db.Challenge.create({
                 name: "challenge",
                 description: "this is a challenge",
@@ -68,12 +72,14 @@ exports.newChallenge = function(req, res) {
                         score: 0 // create score: default 0
                     }
                 }).then(function(score) {
-                    res.json({user,challenge,score});
+                    console.log("should have succeeded");
+                    res.redirect("/dashboard");
                 });
             });
         }).catch(function(error) {
             // send error message 
-            res.json(error);
+            console.log(error);
+            res.redirect("/dashboard");
         });
         // QUESTION: do I need catches on each then promise?
     };
@@ -94,7 +100,7 @@ exports.joinChallenge = function(req, res) {
             // find challenge
             db.Challenge.findOne({
                 where: { 
-                    gameCode: createCode();
+                    gameCode: createCode()
                 }
             }).then(function(challenge) {
                 // add user as participant in challenge
