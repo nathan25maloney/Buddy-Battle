@@ -169,14 +169,20 @@
                       </div>
 
                       <!-- List group -->
-                      <table class="list-group">
+                      <table class="col-md-9 table table-striped">
                         <thead>
-                            <th>Challenger</th>
-                            <th>
+                            <tr>
+                                <th>Challenger</th>
+                                <th>Score</th>
+                            </tr>
                         </thead>
+                        <tbody>
+
                         {{#each users}}
-                        <li class="list-group-item">{{this.dataValues.username}}</li>
+                        <td>{{this.dataValues.username}}</td>
+                        <td>{{this.Score.dataValues.score}}</td>
                         {{/each}}
+                        </tbody>
                       </table>
 
                             <form action="/{{this.id}}?_method=PUT" method="POST">
