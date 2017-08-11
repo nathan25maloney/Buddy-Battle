@@ -17,7 +17,6 @@ exports.signin = function(req, res) {
 
 exports.dashboard = function(req,res) {
 	// find user by id
-    console.log(req);
     db.User.findOne({
         where: {
             id: req.user.id
