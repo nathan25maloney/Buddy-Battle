@@ -5,22 +5,22 @@ var exports = module.exports = {}
  
 exports.signup = function(req, res) {
  
-    res.render('signup');
+    res.render('signup', { user : req.user });
  
 }
 
 exports.signin = function(req, res) {
  
-    res.render('signin');
+    res.render('signin', { user : req.user });
  
 }
 
 exports.dashboard = function(req,res) {
-	res.render('dashboard');
+	res.render('dashboard', { user : req.user });
 }
 
 exports.challenge = function(req,res) {
-	res.render('challenge');
+	res.render('challenge', { user : req.user });
 }
 exports.userchallenges = function(req, res) {
         // find user by id
@@ -78,7 +78,7 @@ exports.newChallenge = function(req, res) {
         // find user
         db.User.findOne({
             where: {
-                id: 1
+                id: req.id
             }
         }).then(function(user) {
             // create challenge
