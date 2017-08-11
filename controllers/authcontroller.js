@@ -102,7 +102,7 @@ exports.joinChallenge = function(req, res) {
         // find user
         db.User.findOne({
             where: {
-                id: 2
+                id: req.user.id
             }
         }).then(function(user) {
             // find challenge
@@ -126,13 +126,13 @@ exports.joinChallenge = function(req, res) {
         });
     };
 
-exports.createUpdateScore = function(req, res) {
+exports.updateScore = function(req, res) {
         db.Score.update({
             score: req.body.score
         },{
             where: {
-                user_id: 1,
-                challenge_id: 1
+                user_id: req.user.id,
+                challenge_id: req.params.id
             }
         }).then(function(score) {
             res.json(score);
