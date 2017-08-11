@@ -165,12 +165,12 @@
                             {{this.dataValues.username}}
                             
 
-                            <!-- {{#if this.dataValues.id user.id}} -->
+                           {{#if this.dataValues.id user.id}}
                             <form action="/{{this.id}}?_method=PUT" method="POST">
                               <input type="hidden" name="sleepy" value="true">
                               <button type="submit">SLEEP TIME!</button>
                             </form>
-
+                            {{/if}}
                           </li>
                       {{/each}}
                         <!--/////////////// USER #1 ///////////////-->
