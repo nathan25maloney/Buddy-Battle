@@ -12,7 +12,7 @@
                         <div class="profile-usertitle">
                             <div class="profile-usertitle-name">
                                 <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
-                                {{user}}
+                                {{user.username}}
                             </div>
                             <div class="profile-usertitle-job">
                                 <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
@@ -20,20 +20,14 @@
                             </div>
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
-                        <!-- SIDEBAR BUTTONS -->
-                        <!--    <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-success btn-sm">Follow</button>
-                    <button type="button" class="btn btn-danger btn-sm">Message</button>
-                </div> -->
-                        <!-- END SIDEBAR BUTTONS -->
                         <!-- SIDEBAR MENU -->
                         <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <!-- ///////////////////////////////////   MODAl #1   ////////////////////-->
+                                    <!-- /   MODAl #1   /-->
                                     <!-- Trigger/Open The Modal -->
                                     <button class="myBtn_multi">
-                                        <!-- Modal 1 -->
+                                <!-- / Modal 1 / -->
                                         <i class="glyphicon glyphicon-plus"></i> Create New Challenge
                                     </button>
                                     <div class="modal modal_multi">
@@ -56,15 +50,14 @@
                                              <label class="demoHeaders">Datepicker</label>
                                                 <input type="text" id="datepicker">
                                                 <p>(Challenge ends at midnight of the date selected!)</p>
-                    <!-- HANDLEBARS-->     
-                    
-                        <button id="submit-challenge" align="right" class="btn btn-default">Create your challenge!</button>
-                    </form>
+
+                                                 <button id="submit-challenge" align="right" class="btn btn-default" 
+                                                type="submit" method="post" action="/api/challenge/new">Create your challenge!</button>
                                         </div>
                                     </div>
                                 </li>
                                 <br>
-                                <!-- /////////////////////////////////////   MODAL #2   //////////////////////-->
+                                <!-- //   MODAL #2   //-->
                                 <li>
                                          <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button>
                                         <div class="modal modal_multi">
@@ -85,7 +78,7 @@
 
                                 </li>
                                 <br>
-                                <!-- /////////////////////////////////////   MODAL #3  ///////////////////////-->
+                                <!-- ///   MODAL #3  ///-->
                                 <li>
                                     <button class="myBtn_multi">
                                         <!-- Modal 3 -->
@@ -109,7 +102,7 @@
                                     </div>
                                 </li>
                                 <br>
-                                <!-- /////////////////////////////////////   MODAL #4    /////////////////////-->
+                                <!-- ////   MODAL #4    ////-->
                                 <li>
                                     <!-- Trigger/Open The Modal -->
                                     <button class="myBtn_multi">
@@ -132,7 +125,7 @@
                                     </div>
                                 </li>
                                 <br>
-                                <!-- ///////////////////////////////////////   MODAL #5 //////////////////////-->
+                                <!-- /////   MODAL #5   /////-->
                                 <li>
                                     <!-- Trigger/Open The Modal -->
                                     <button class="myBtn_multi">
@@ -156,13 +149,19 @@
                                     </div>
                                 </li>
                                 <br>
-            <!-- ///////////////////////////////////////   Logout Button //////////////////////-->
+            <!-- ///   Logout Button ///-->
                                     <li>
+<<<<<<< Updated upstream
                                      <form id="logout" name="logout" method="post" action="/logout">
                                         <button class="submit" id="sign-out">
                                             <i class="glyphicon glyphicon-arrow-left"></i> Log Out
                                         </button>
                                     </form>
+=======
+                                    <button>
+                                        <i class="glyphicon glyphicon-arrow-left"></i> Log Out
+                                    </button>
+>>>>>>> Stashed changes
                                     </li>
                                     </ul>
                                 </div>
@@ -177,11 +176,11 @@
                             <h1>Challenges</h1>     
                         </div>
          <!-- New Content -->
-                        <div class="author-container">
+                        <div class="challenge-container">
                     <table id="Challenge-table" class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                {{user}}<!--Add HandleBars Functionality-->
                             </tr>
                         </thead>
                     </table>
@@ -196,3 +195,5 @@
     <br>
 
 <script src="/assets/js/dashboard.js"></script>
+
+  

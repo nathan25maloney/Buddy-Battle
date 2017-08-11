@@ -31,9 +31,6 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-
-
-
 app.use(session({
 	secret: 'vidyapathaisalwaysrunning',
 	resave: true,

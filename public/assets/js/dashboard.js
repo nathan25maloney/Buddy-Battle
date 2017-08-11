@@ -48,28 +48,5 @@ window.onclick = function(event) {
 //     }
 };
 
-// // Get the modal
 
-// var modal = document.getElementById('myModal');
 
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// // Get the <span> element that closes the modal
-// var span = modal.getElementsByClassName("close")[0]; // Modified by dsones uk
-
-// // When the user clicks on the button, open the modal
-
-// btn.onclick = function() {
-
-//     modal.style.display = "block";
-// }
-
-// When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//     modal.style.display = "none";
-// }
-
-// $( "#datepicker" ).click(function() {
-//     $(this).datepicker();
-// });
