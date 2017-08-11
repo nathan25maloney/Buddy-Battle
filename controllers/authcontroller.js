@@ -28,7 +28,7 @@ exports.dashboard = function(req,res) {
                 user: req.user,
                 challenges: challenges
             };
-            console.log("Context for /dashbaord:",context);
+            console.log("Context for /dashboard:",context);
             res.render('dashboard', context);
         });
     });
@@ -44,7 +44,7 @@ exports.challenge = function(req,res) {
         // get all users and scores
         challenge.getUsers().then(function(users) {
             let context = {
-                challenges: challenge,
+                challenge,
                 users: users
             };
             console.log("Context for /challenge:",context);
