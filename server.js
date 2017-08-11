@@ -14,10 +14,6 @@ var passport = require('passport');
 var flash    = require('connect-flash');
 
 
-
-
-
-
 app.use(cookieParser());
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -33,6 +29,17 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+//Post route for creating a new challenge in dashboard
+app.post('/dashboard', function(req,res){
+	connection.query('SELECT * FROM challenges;', function(err,data){
+		res.render('dashboard', {challenges:data})
+	});
+});
+
+//Post route for displaying user on challenges page
+
+
 
 app.use(session({
 	secret: 'vidyapathaisalwaysrunning',
