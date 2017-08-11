@@ -11,7 +11,7 @@
 	    <script>
 			$(document).ready($( function() {
 			    $( "#datepicker" ).datepicker({
-			    	minDate: new Date()
+			    	minDate: $.datepicker.formatDate( "mm-dd-yy", new Date() );
 			    });
 			  } ));
 		</script>

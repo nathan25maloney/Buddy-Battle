@@ -128,7 +128,7 @@ exports.joinChallenge = function(req, res) {
 
 exports.createUpdateScore = function(req, res) {
         db.Score.update({
-            score: 5
+            score: req.body.score
         },{
             where: {
                 user_id: 1,
