@@ -25,65 +25,26 @@ exports.dashboard = function(req,res) {
         // get all challenges and scores
         user.getChallenges().then(function(challenges) {
             console.log(user);
-            res.render('dashboard', {user,challenges});
+            res.render('dashboard', {user: req.user,challenges});
         });
     });
 }
 
 exports.challenge = function(req,res) {
-	res.render('challenge', { user : req.user });
+    // find challenge by id
+    db.Challenge.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(function(challenge) {
+        // get all users and scores
+        challenge.getUsers().then(function(users) {
+            console.log("Challenge", challenge);
+            res.render('challenge', { challenge, users});
+        });
+    });
+	
 }
-exports.userchallenges = function(req, res) {
-        // find user by id
-        db.User.findOne({
-            where: {
-                id: req.params.id
-            }
-        }).then(function(user) {
-            // get all users and scores
-            user.getChallenges().then(function(challenges) {
-                res.json({user,challenges});
-            });
-        });
-    };
-
-
-exports.createUser = function(req, res) {
-        // create new user
-        db.User.bulkCreate([
-            {
-                name:"Catherine",
-                username: "nicerateh",
-                password: "manatee"
-            },
-            {
-                name:"Catherine",
-                username: "nicerateh1",
-                password: "manatee"
-            }
-        ]).then(function(users) {
-            // send user created
-            res.json(users);
-        }).catch(function(error) {
-            // send error message 
-            res.json(error);
-        });
-    };
-
-exports.challegeID = function(req, res) {
-        // find challenge by id
-        db.Challenge.findOne({
-            where: {
-                id: req.params.id
-            }
-        }).then(function(challenge) {
-            // get all users and scores
-            challenge.getUsers().then(function(users) {
-                res.json({challenge,users});
-            });
-        });
-    };
-
 
 exports.newChallenge = function(req, res) {
         // find user
@@ -182,4 +143,26 @@ exports.logout = function(req, res) {
  
 
 
+}
+
+function createCode() {
+  var code = "";
+  var alphanum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 4; i++)
+    code += alphanum.charAt(Math.floor(Math.random() * alphanum.length));
+
+  return code;
+}
+
+// TODO: finish this and add to score update api calls
+// update winner_id everytime score is added/changed
+function updateWinner(id) {
+    db.Score.findAll({
+        where: {
+            challenge_id: id
+        }
+    }).then(function(scores) {
+
+    });
 }
