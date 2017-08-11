@@ -36,7 +36,7 @@ module.exports = function(app, passport) {
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
-    app.get('/logout',authController.logout);
+    app.post('/logout',authController.logout);
 
 
     //api routes

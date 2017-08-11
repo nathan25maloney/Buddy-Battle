@@ -38,6 +38,7 @@
                                     </button>
                                     <div class="modal modal_multi">
                                         <!-- Modal content -->
+                                        <form id="newChallenge" name="newChallenge" method="post" action="/api/challenge/new">
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <div class="form-group">
@@ -55,7 +56,10 @@
                                              <label class="demoHeaders">Datepicker</label>
                                                 <input type="text" id="datepicker">
                                                 <p>(Challenge ends at midnight of the date selected!)</p>
-                    <!-- HANDLEBARS-->     <button id="submit-challenge" align="right" class="btn btn-default" type="submit">Create your challenge!</button>
+                    <!-- HANDLEBARS-->     
+                    
+                        <button id="submit-challenge" align="right" class="btn btn-default">Create your challenge!</button>
+                    </form>
                                         </div>
                                     </div>
                                 </li>
@@ -154,9 +158,11 @@
                                 <br>
             <!-- ///////////////////////////////////////   Logout Button //////////////////////-->
                                     <li>
-                                    <button id="sign-out">
-                                        <i class="glyphicon glyphicon-arrow-left"></i> Log Out
-                                    </button>
+                                     <form id="logout" name="logout" method="post" action="/logout">
+                                        <button class="submit" id="sign-out">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> Log Out
+                                        </button>
+                                    </form>
                                     </li>
                                     </ul>
                                 </div>
