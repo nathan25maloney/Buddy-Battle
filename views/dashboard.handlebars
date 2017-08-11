@@ -1,5 +1,5 @@
 <div class="container">
-        <dir id="wrapBox">
+        <div id="wrapBox">
             <div class="row profile">
                 <div class="col-md-3">
                     <div class="profile-sidebar">
@@ -14,16 +14,12 @@
                                 <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
                                 {{user.username}}
                             </div>
-                            <div class="profile-usertitle-job">
-                                <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
-                                I'ma Boss
-                            </div>
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR MENU -->
                         <div class="profile-usermenu">
                             <ul class="nav">
-                                <li class="active">
+                                <li>
                                     <!-- /   MODAl #1   /-->
                                     <!-- Trigger/Open The Modal -->
                                     <button class="myBtn_multi">
@@ -36,19 +32,22 @@
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <div class="form-group">
-                                                <label for="name">Challenge Name</label>
-                                               <!-- HANDLEBARS-->  <input type="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
+                                                <span> <label for="name">Challenge Name</label>
+                                               <!-- HANDLEBARS-->  <input type="name" name="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
+                                               </span>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleTextarea">Description of Challenge</label>
-                                               <!-- HANDLEBARS-->  <textarea class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
+                                                <span><label for="exampleTextarea">Description of Challenge</label>
+                                               <!-- HANDLEBARS-->  <textarea name="description" class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
+                                               </span>
                                             </div>
                                              <div class="form-group">
-                                              <!-- HANDLEBARS-->   <label for="metric">What are you measuring?</label>
-                                                <input type="metric" class="form-control" placeholder="i.e. # of tacos">
+                                              <!-- HANDLEBARS-->  
+                                                <span> <label for="metric">What are you measuring?</label>
+                                                <input type="metric" class="form-control" name="metric" placeholder="i.e. # of tacos"> </span>
                                             </div>
-                                             <label class="demoHeaders">Datepicker</label>
-                                                <input type="text" id="datepicker">
+                                                <span> <label class="demoHeaders">Datepicker</label>
+                                                <input name="datepicker" id="datepicker"> </span>
                                                 <p>(Challenge ends at midnight of the date selected!)</p>
 
                                                  <button id="submit-challenge" align="right" class="btn btn-default" 
@@ -78,53 +77,58 @@
 
                                 </li>
                                 <br>
-                                <!-- ///   MODAL #3  ///-->
-                                <li>
-                                    <button class="myBtn_multi">
-                                        <!-- Modal 3 -->
-                                        <i class="glyphicon glyphicon-user">
-                                                </i> friends
-                                    </button>
-                                    <div class="modal modal_multi">
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <div class="profile-header-container">
-                                                <div class="profile-header-img">
-                                                    <img class="img-circle" id="profile-img" src="http://www.hmcoloringpages.com/wp-content/uploads/person-silhouette-9.gif" />
+                                 <!-- ///   MODAL #3  /// -->
+<!--                                 <li> -->
+<!--                                     <button class="myBtn_multi"> -->
+                                         <!-- Modal 3  -->
+<!--                                         <i class="glyphicon glyphicon-user"> -->
+<!--                                                 </i> friends -->
+<!--                                     </button> -->
+<!--                                     <div class="modal modal_multi"> -->
+                                         <!-- Modal content -->
+<!--                                         <div class="modal-content"> -->
+<!--                                             <span class="close close_multi">×</span> -->
+<!--                                             <div class="profile-header-container"> -->
+<!--                                                 <div class="profile-header-img"> -->
+<!--                                                     <img class="img-circle" id="profile-img" src="http://www.hmcoloringpages.com/wp-content/uploads/person-silhouette-9.gif" /> -->
                                                     <!-- badge -->
-                                                    <div class="rank-label-container">
-                                                    <span id="friend-name" class="label label-default rank-label">Robbie Delfs</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
+<!--                                                     <div class="rank-label-container"> -->
+<!--                                                     <span id="friend-name" class="label label-default rank-label">Robbie Delfs</span> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </li> -->
+                                <!-- <br> -->
                                 <!-- ////   MODAL #4    ////-->
-                                <li>
+                                <!-- <li> -->
                                     <!-- Trigger/Open The Modal -->
-                                    <button class="myBtn_multi">
-                                        <i class="glyphicon glyphicon-option-vertical"></i> Challenges Won
-                                    </button>
-                                    <div class="modal modal_multi">
+                                    <!-- <button class="myBtn_multi"> -->
+                                        <!-- <i class="glyphicon glyphicon-option-vertical"></i> Challenges Won -->
+                                    <!-- </button> -->
+                                    <!-- <div class="modal modal_multi"> -->
                                         <!-- Modal content -->
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <div class="profile-header-container">
                                                 <div class="profile-header-img">
                                                     <img class="img-oval" id="winner-pic" src="/assets/images/trophy.jpeg" />
+                                        <!-- <div class="modal-content"> -->
+                                            <!-- <span class="close close_multi">×</span> -->
+                                            <!-- <div class="profile-header-container"> -->
+                                                <!-- <div class="profile-header-img"> -->
+                                                    <!-- <img class="img-oval" id="winner-pic" src="http://www.psdgraphics.com/file/trophy-award-icon.jpg" /> -->
                                                     <!-- badge -->
-                                                    <div class="rank-label-container">
-                                                        <span class="label label-default rank-label">Taco Showdown!</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
+                                                    <!-- <div class="rank-label-container"> -->
+                                                        <!-- <span class="label label-default rank-label">Taco Showdown!</span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+                                            <!-- </div> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                <!-- </li> -->
+                                <!-- <br> -->
                                 <!-- /////   MODAL #5   /////-->
                                 <li>
                                     <!-- Trigger/Open The Modal -->
@@ -171,18 +175,42 @@
                         </div>
          <!-- New Content -->
                         <div class="challenge-container">
-                    <table id="Challenge-table" class="table table-striped">
-                        <thead>
-                            <tr>
-                                {{user}}<!--Add HandleBars Functionality-->
-                            </tr>
-                        </thead>
-                    </table>
+                
+                    
+                    
+                        <table id="Challenge-table" class="table table-striped">
+                            <thead>
+
+                                {{#each challenges}}
+                                <tr>
+                                    
+                                        <div class="panel panel-default">
+                                          <!-- Default panel contents -->
+                                          <div class="panel-heading">Name: {{this.dataValues.name}}</div>
+                                          <div class="panel-body">
+                                            <p>Desciption: {{this.dataValues.description}}</p>
+                                          </div>
+
+                                          <!-- List group -->
+                                          <ul class="list-group">
+                                            <li class="list-group-item">Measure: {{this.dataValues.measurement}}</li>
+                                          </ul>
+                                        </div>
+                                        
+                                    
+                                </tr>
+                                {{/each}}
+                            </thead>
+                        </table>
+                    
+                   
+                
+
                 </div>
                     </div>
                 </div>
             </div>
-        </dir>
+        </div>
         <!-- Container Close -->
     </div>
     <br>

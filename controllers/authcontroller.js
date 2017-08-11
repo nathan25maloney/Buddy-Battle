@@ -26,9 +26,9 @@ exports.dashboard = function(req,res) {
         user.getChallenges().then(function(challenges) {
             let context = {
                 user: req.user,
-                challenges
+                challenges: challenges
             };
-            console.log("Context for /dashboard:",context);
+            console.log("Context for /dashbaord:",context);
             res.render('dashboard', context);
         });
     });
@@ -38,7 +38,7 @@ exports.challenge = function(req,res) {
     // find challenge by id
     db.Challenge.findOne({
         where: {
-            id: req.params.id
+            id: 1
         }
     }).then(function(challenge) {
         // get all users and scores
@@ -56,17 +56,21 @@ exports.challenge = function(req,res) {
 
 exports.newChallenge = function(req, res) {
         // find user
+        console.log("find user");
         db.User.findOne({
             where: {
-                id: req.id
+                id: req.user.id
             }
         }).then(function(user) {
             // create challenge
+            console.log("user: " + user);
+            console.log("req: " + req);
+
             db.Challenge.create({
-                name: "challenge",
-                description: "this is a challenge",
-                measurement: "# of tacos",
-                deadline: new Date(),
+                name: req.body.name,
+                description: req.body.description,
+                measurement: req.body.metric,
+                deadline: req.body.datepicker,
                 gameCode: createCode(),
                 creator_id: user.id
             }).then(function(challenge) {
@@ -76,12 +80,14 @@ exports.newChallenge = function(req, res) {
                         score: 0 // create score: default 0
                     }
                 }).then(function(score) {
-                    res.json({user,challenge,score});
+                    console.log("should have succeeded");
+                    res.redirect("/dashboard");
                 });
             });
         }).catch(function(error) {
             // send error message 
-            res.json(error);
+            console.log(error);
+            res.redirect("/dashboard");
         });
         // QUESTION: do I need catches on each then promise?
     };

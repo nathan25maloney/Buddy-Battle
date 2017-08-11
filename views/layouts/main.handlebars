@@ -20,22 +20,21 @@
 		<div class="container">
 		{{{ body }}}
 		</div>
+		<script>
+			$('#submitbtn').click(function(event) {       
+				event.preventDefault();
+		    //Get the data from all the fields
+		    var userName = $('');
+		    var ad_id = $('input[name=ad_id]');
+		    var ip_address = $('input[name=ip_address]');
+
+		    $.post('../vote_plus.php', { user: "user_id.val()", ad: "ad_id.val()", ip: "ip_address.val()" }, function () {
+		            $('.success_msg').append("Vote Successfully Recorded").fadeIn();
+		        });
+		        
+		    }); 
+		</script>
 	</body>
 
 
-<script>
 
-	$('#submitbtn').click(function(event) {       
-		event.preventDefault();
-    //Get the data from all the fields
-    var userName = $('');
-    var ad_id = $('input[name=ad_id]');
-    var ip_address = $('input[name=ip_address]');
-
-    $.post('../vote_plus.php', { user: "user_id.val()", ad: "ad_id.val()", ip: "ip_address.val()" }, function () {
-            $('.success_msg').append("Vote Successfully Recorded").fadeIn();
-        });
-        
-    }); 
-	
-</script>
