@@ -36,19 +36,22 @@
                                         <div class="modal-content">
                                             <span class="close close_multi">×</span>
                                             <div class="form-group">
-                                                <label for="name">Challenge Name</label>
-                                               <!-- HANDLEBARS-->  <input type="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
+                                                <span> <label for="name">Challenge Name</label>
+                                               <!-- HANDLEBARS-->  <input type="name" name="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
+                                               </span>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleTextarea">Description of Challenge</label>
-                                               <!-- HANDLEBARS-->  <textarea class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
+                                                <span><label for="exampleTextarea">Description of Challenge</label>
+                                               <!-- HANDLEBARS-->  <textarea name="description" class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
+                                               </span>
                                             </div>
                                              <div class="form-group">
-                                              <!-- HANDLEBARS-->   <label for="metric">What are you measuring?</label>
-                                                <input type="metric" class="form-control" placeholder="i.e. # of tacos">
+                                              <!-- HANDLEBARS-->  
+                                                <span> <label for="metric">What are you measuring?</label>
+                                                <input type="metric" class="form-control" name="metric" placeholder="i.e. # of tacos"> </span>
                                             </div>
-                                             <label class="demoHeaders">Datepicker</label>
-                                                <input type="text" id="datepicker">
+                                                <span> <label class="demoHeaders">Datepicker</label>
+                                                <input name="datepicker" id="datepicker"> </span>
                                                 <p>(Challenge ends at midnight of the date selected!)</p>
 
                                                  <button id="submit-challenge" align="right" class="btn btn-default" 
@@ -171,13 +174,37 @@
                         </div>
          <!-- New Content -->
                         <div class="challenge-container">
-                    <table id="Challenge-table" class="table table-striped">
-                        <thead>
-                            <tr>
-                                {{user}}<!--Add HandleBars Functionality-->
-                            </tr>
-                        </thead>
-                    </table>
+                
+                    
+                    
+                        <table id="Challenge-table" class="table table-striped">
+                            <thead>
+
+                                {{#each challenges}}
+                                <tr>
+                                    
+                                        <div class="panel panel-default">
+                                          <!-- Default panel contents -->
+                                          <div class="panel-heading">Name: {{this.dataValues.name}}</div>
+                                          <div class="panel-body">
+                                            <p>Desciption: {{this.dataValues.description}}</p>
+                                          </div>
+
+                                          <!-- List group -->
+                                          <ul class="list-group">
+                                            <li class="list-group-item">Measure: {{this.dataValues.measurement}}</li>
+                                          </ul>
+                                        </div>
+                                        
+                                    
+                                </tr>
+                                {{/each}}
+                            </thead>
+                        </table>
+                    
+                   
+                
+
                 </div>
                     </div>
                 </div>

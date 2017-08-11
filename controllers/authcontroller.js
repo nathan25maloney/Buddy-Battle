@@ -26,7 +26,7 @@ exports.dashboard = function(req,res) {
         user.getChallenges().then(function(challenges) {
             let context = {
                 user: req.user,
-                challenges
+                challenges: challenges
             };
             console.log("Context for /dashboard:",context);
             res.render('dashboard', context);
@@ -67,10 +67,10 @@ exports.newChallenge = function(req, res) {
             console.log("req: " + req);
 
             db.Challenge.create({
-                name: "challenge",
-                description: "this is a challenge",
-                measurement: "# of tacos",
-                deadline: new Date(),
+                name: req.body.name,
+                description: req.body.description,
+                measurement: req.body.metric,
+                deadline: req.body.datepicker,
                 gameCode: createCode(),
                 creator_id: user.id
             }).then(function(challenge) {
