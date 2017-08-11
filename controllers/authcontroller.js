@@ -16,7 +16,18 @@ exports.signin = function(req, res) {
 }
 
 exports.dashboard = function(req,res) {
-	res.render('dashboard');
+	// find user by id
+    db.User.findOne({
+        where: {
+            id: req.id
+        }
+    }).then(function(user) {
+        // get all challenges and scores
+        user.getChallenges().then(function(challenges) {
+            console.log(user);
+            res.render('dashboard', {user,challenges});
+        });
+    });
 }
 
 exports.challenge = function(req,res) {
