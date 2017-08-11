@@ -32,7 +32,7 @@ module.exports = function(app, passport) {
 
     
     
-    app.get("/challenge", isLoggedIn, authController.challenge);
+    app.get("/challenge/:id", isLoggedIn, authController.challenge);
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 

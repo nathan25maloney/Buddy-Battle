@@ -44,8 +44,8 @@ exports.challenge = function(req,res) {
         // get all users and scores
         challenge.getUsers().then(function(users) {
             let context = {
-                challenge,
-                users
+                challenges: challenge,
+                users: users
             };
             console.log("Context for /challenge:",context);
             res.render('challenge', context);
