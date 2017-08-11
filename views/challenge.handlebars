@@ -168,6 +168,9 @@
                         <p>Metric: {{challenge.dataValues.measurement}}</p>
                         <p>Deadline: {{challenge.dataValues.deadline}}</p>
                         <p>Game Code: {{challenge.dataValues.gameCode}}</p>
+                        <form action="/api/challenge/{{challenge.dataValues.description}}/score" method="POST">
+                          <input type="text" name="score" ><button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
+                        </form>
                       </div>
 
                       <!-- List group -->
@@ -186,11 +189,6 @@
                         {{/each}}
                         </tbody>
                       </table>
-
-                            <form action="/api/challenge/{{this.dataValues.id}}/score" method="POST">
-                              <input type="hidden" name="score" value="true">
-                              <button type="submit"></button>
-                            </form>
                             
                           </li>
                     </div>
