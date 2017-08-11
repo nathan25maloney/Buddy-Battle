@@ -158,14 +158,13 @@
                 <div class="col-md-9">
                     <div class="profile-content">
                         <div class="page-header">
-                            <h1>(Challenge Name Here)</h1>
+                            <h1>{{challenge.name}}</h1>
                         </div>
                         {{#each users}}
                           <li>
                             {{this.dataValues.username}}
                             
 
-                            <!-- {{#if this.dataValues.id user.id}} -->
                             <form action="/{{this.id}}?_method=PUT" method="POST">
                               <input type="hidden" name="sleepy" value="true">
                               <button type="submit">SLEEP TIME!</button>
