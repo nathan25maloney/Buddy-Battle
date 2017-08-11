@@ -146,9 +146,11 @@
                                 <br>
             <!-- ///////////   Logout Button //////////-->
                                     <li>
-                                    <button id="sign-out">
-                                        <i class="glyphicon glyphicon-arrow-left"></i> Log Out
-                                    </button>
+                                    <form id="logout" name="logout" method="post" action="/logout">
+                                        <button class="submit" id="sign-out">
+                                            <i class="glyphicon glyphicon-arrow-left"></i> Log Out
+                                        </button>
+                                    </form>
                                     </li>
                                     </ul>
                                 </div>
@@ -185,8 +187,8 @@
                         </tbody>
                       </table>
 
-                            <form action="/{{this.id}}?_method=PUT" method="POST">
-                              <input type="hidden" name="sleepy" value="true">
+                            <form action="/api/challenge/{{this.dataValues.id}}/score" method="POST">
+                              <input type="hidden" name="score" value="true">
                               <button type="submit"></button>
                             </form>
                             
