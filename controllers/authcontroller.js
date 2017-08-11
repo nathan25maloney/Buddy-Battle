@@ -16,9 +16,19 @@ exports.signin = function(req, res) {
 }
 
 exports.dashboard = function(req,res) {
-
-	res.render('dashboard', { user : req.user });
-
+	// find user by id
+    console.log(req);
+    db.User.findOne({
+        where: {
+            id: req.user.id
+        }
+    }).then(function(user) {
+        // get all challenges and scores
+        user.getChallenges().then(function(challenges) {
+            console.log(user);
+            res.render('dashboard', {user,challenges});
+        });
+    });
 }
 
 exports.challenge = function(req,res) {
