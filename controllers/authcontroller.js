@@ -38,7 +38,7 @@ exports.challenge = function(req,res) {
     // find challenge by id
     db.Challenge.findOne({
         where: {
-            id: 1
+            id: req.params.id
         }
     }).then(function(challenge) {
         // get all users and scores
