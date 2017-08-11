@@ -1,4 +1,5 @@
 var authController = require('../controllers/authcontroller.js');
+
  
 module.exports = function(app, passport) {
  
@@ -28,13 +29,37 @@ module.exports = function(app, passport) {
  
     ));
 
-    app.get("/api/user/:id", isLoggedIn, authcontroller.userchallenges); 
+
     
-    app.get("/challenge", isLoggedIn, authcontroller.challenge);
+    
+    app.get("/challenge", isLoggedIn, authController.challenge);
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
 
-    app.get('/logout',authController.logout)
+    app.get('/logout',authController.logout);
+
+
+    //api routes
+    // get all challenges by user id
+    app.get("/api/user/:id", isLoggedIn, authController.userchallenges); 
+
+    //create new user
+    app.post("/api/user/new", isLoggedIn, authController.createUser);
+
+    // get challenge by id and get all users and scores
+    app.get("/api/challenge/:id", isLoggedIn, authController.challegeID);
+
+    // create new challenge
+    app.post("/api/challenge/new", isLoggedIn, authController.newChallenge);
+
+    // join existing challenge
+    app.post("/api/challenge/join", isLoggedIn, authController.joinChallenge);
+
+    // create/update score
+    app.post("/api/challenge/:id/score", isLoggedIn, authController.createUpdateScore);
+
+
+
 
 
     function isLoggedIn(req, res, next) {
@@ -44,6 +69,29 @@ module.exports = function(app, passport) {
         return next();
          
     res.redirect('/signin');
+
+
+    function createCode() {
+      var code = "";
+      var alphanum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+      for (var i = 0; i < 4; i++)
+        code += alphanum.charAt(Math.floor(Math.random() * alphanum.length));
+
+      return code;
+    }
+
+    // TODO: finish this and add to score update api calls
+    // update winner_id everytime score is added/changed
+    function updateWinner(id) {
+        db.Score.findAll({
+            where: {
+                challenge_id: id
+            }
+        }).then(function(scores) {
+
+        });
+    }
  
 }
  
