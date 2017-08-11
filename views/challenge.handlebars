@@ -178,6 +178,13 @@
                         <li class="list-group-item">{{this.dataValues.username}}</li>
                         {{/each}}
                       </table>
+
+                            <form action="/{{this.id}}?_method=PUT" method="POST">
+                              <input type="hidden" name="sleepy" value="true">
+                              <button type="submit"></button>
+                            </form>
+                            
+                          </li>
                     </div>
                 </div>
             </div>
