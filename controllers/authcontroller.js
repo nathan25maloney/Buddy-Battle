@@ -124,7 +124,7 @@ exports.joinChallenge = function(req, res) {
                     }
                 }).then(function(score) {
                     console.log(challenge);
-                    res.redirect("/challenge/" + req.params.id);
+                    res.redirect("/challenge/" + challenge.id);
                 });
             });
         }).catch(function(error) {

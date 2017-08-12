@@ -44,7 +44,7 @@ module.exports = function(app, passport) {
     app.post("/api/challenge/new", isLoggedIn, authController.newChallenge);
 
     // join existing challenge
-    app.post("/api/challenge/join/:id", isLoggedIn, authController.joinChallenge);
+    app.post("/api/challenge/join", isLoggedIn, authController.joinChallenge);
 
     // update score
     app.post("/api/challenge/:id/score", isLoggedIn, authController.updateScore);
