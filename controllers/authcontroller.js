@@ -108,7 +108,7 @@ exports.joinChallenge = function(req, res) {
             // find challenge
             db.Challenge.findOne({
                 where: { 
-                    gameCode: createCode()
+                    gameCode: req.body.gameCode
                 }
             }).then(function(challenge) {
                 // add user as participant in challenge
@@ -117,7 +117,8 @@ exports.joinChallenge = function(req, res) {
                         score: 0 // create score: default 0
                     }
                 }).then(function(score) {
-                    res.json({user,challenge,score});
+                    console.log(challenge);
+                    res.redirect("/challenge/" + challenge.id);
                 });
             });
         }).catch(function(error) {

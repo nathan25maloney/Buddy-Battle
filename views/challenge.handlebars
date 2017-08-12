@@ -160,7 +160,7 @@
                 <div class="col-md-9">
                     <div class="profile-content">
 
-                      <div class="panel panel-default">
+                      <div class="panel panel-danger">
                       <!-- Default panel contents -->
                       <div class="panel-heading"><h1>{{challenge.dataValues.name}}</h1></div>
                       <div class="panel-body">
@@ -169,7 +169,12 @@
                         <p>Deadline: {{challenge.dataValues.deadline}}</p>
                         <p>Game Code: {{challenge.dataValues.gameCode}}</p>
                         <form action="/api/challenge/{{challenge.dataValues.description}}/score" method="POST">
-                          <input type="text" name="score" ><button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
+                          <div class="input-group">
+                            <input type="text" name="score" class="form-control">
+                            <span class="input-group-btn">
+                            <button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
+                            </span>
+                          </div>
                         </form>
                       </div>
 
@@ -184,8 +189,10 @@
                         <tbody>
 
                         {{#each users}}
-                        <td>{{this.dataValues.username}}</td>
-                        <td>{{this.Score.dataValues.score}}</td>
+                        <tr>
+                            <td>{{this.dataValues.username}}</td>
+                            <td>{{this.Score.dataValues.score}}</td>
+                        </tr>
                         {{/each}}
                         </tbody>
                       </table>

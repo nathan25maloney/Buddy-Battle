@@ -1,21 +1,23 @@
-<div>
+<div class="text-center">
     <img id="logo" src="/assets/images/buddyBattleLogo.png">
 </div>
 
-<section id="login">
+<section id="login" class="text-center">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-wrap">
-                <h1>Enter your login info</h1>
+                <h1>Login</h1>
                   <form id="signin" name="signin" method="post" action="/signin">
-			        <span><label for="username">Username</label>
-			        <input class="text" name="username" type="text" /></span>
+			        <span>
+                        <label for="username">Username</label>
+        		        <input id="text" name="username" type="text" class="form-control"/>
+                    </span>
 			        <br>
 			        <span><label for="password">Password</label>
-			        <input name="password" type="password" /></span>
+			        <input name="password" type="password" class="form-control"/></span>
 			        <br>
-			        <center><input class="btn" type="submit" value="Sign In" /></center>
+			        <center><input class="btn" type="submit" value="Log In" class="btn btn-default" /></center>
 			    </form>
                     <hr>
                 </div>
