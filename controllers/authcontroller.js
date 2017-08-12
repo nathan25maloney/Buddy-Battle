@@ -23,13 +23,17 @@ exports.dashboard = function(req,res) {
         }
     }).then(function(user) {
         // get all challenges and scores
-        db.Challenge.findAll({}).then(function(challenges) {
-            let context = {
-                user: req.user,
-                challenges: challenges
-            };
-            console.log("Context for /dashboard:",context);
-            res.render('dashboard', context);
+        db.Challenge.findAll({}).then(function(challenge) {
+
+            
+                let context = {
+                    user: user,
+                    challenge: challenge
+                };
+                console.log("Context for /dashboard:",context);
+                res.render('dashboard', context);
+            
+            
         });
     });
 }
@@ -113,6 +117,7 @@ exports.joinChallenge = function(req, res) {
                 }
             }).then(function(challenge) {
                 // add user as participant in challenge
+                console.log("CHALLENGE:"+challenge);
                 user.addChallenge(challenge, {
                     through: {
                         score: 0 // create score: default 0
