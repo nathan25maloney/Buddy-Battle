@@ -113,6 +113,7 @@ Dashboard CSS
   background-color: #800517;
   min-height: 100vh;
   color: white;
+  position: fixed;
 }
 
 a {
