@@ -43,9 +43,9 @@ window.onclick = function(event) {
         modalparent[event.target.getAttribute('data-index')].style.display = "none";
     }
 
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
+    // if (event.target === modal) {
+    //     modal.style.display = "none";
+    // }
 };
 
 // // Get the modal

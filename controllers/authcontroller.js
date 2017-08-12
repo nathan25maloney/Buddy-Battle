@@ -50,7 +50,8 @@ exports.challenge = function(req,res) {
             let context = {
                 user: req.user,
                 challenge,
-                users: users
+                users: users,
+                deadline: challenge.dataValues.deadline.toLocaleDateString()
             };
             console.log("Context for /challenge:",context);
             res.render('challenge', context);
@@ -134,17 +135,30 @@ exports.joinChallenge = function(req, res) {
     };
 
 exports.updateScore = function(req, res) {
-        db.Score.update({
-            score: req.body.score
-        },{
+        db.Challenge.findOne({
             where: {
-                user_id: req.user.id,
-                challenge_id: req.params.id
+                id: req.params.id
             }
-        }).then(function(score) {
+        }).then(function(challenge) {
+            let today = new Date();
+            let deadline = new Date(challenge.deadline);
+            console.log(today, deadline);
+            if(deadline > today) {
+                db.Score.update({
+                    score: req.body.score
+                },{
+                    where: {
+                        user_id: req.user.id,
+                        challenge_id: req.params.id
+                    }
+                }).then(function(score) {
 
-            console.log("Score:",score);
-            res.redirect("/challenge/"+ req.params.id);
+                    console.log("Score:",score);
+                    res.redirect("/challenge/"+ req.params.id);
+                });
+            } else {
+                res.redirect("/challenge/"+ req.params.id);
+            }
         });
     };
 

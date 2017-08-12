@@ -1,20 +1,21 @@
 <div class="container-fluid">
-    <div class="col-md-3">
+    <div class="col-md-3 sidebar">
         <div class="profile-sidebar">
             <div id="sidebar-logo" class="text-center">
-                <img id="mini-logo" src="/assets/images/buddyBattleLogo.png">
-                <h3>Buddy Battle</h3>
-            </div>                        
+                <!-- <img id="mini-logo" src="/assets/images/buddyBattleLogo.png"> -->
+                <h1 class="text-uppercase">Buddy Battle</h1>
+            </div>
+            <br>                        
             <!-- SIDEBAR USERPIC -->
-            <div class="profile-userpic text-center">
-                <img id="profile-img" src="/assets/images/person-silhouette.gif" alt="user image">
+            <div class="profile-userpic">
+                <img id="profile-img" src="/assets/images/person-silhouette.gif" class="img-responsive" alt="user image">
             </div>
             <!-- END SIDEBAR USERPIC -->
             <!-- SIDEBAR USER TITLE -->
             <div class="profile-usertitle">
                 <div class="profile-usertitle-name">
                     <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
-                    {{user.username}}
+                    <h2 class="text-uppercase">{{user.username}}</h2>
                 </div>
             </div>
             <!-- END SIDEBAR USER TITLE -->
@@ -44,11 +45,11 @@
                                 <h4>What is Buddy Battle?</h4>
                                 <p>Buddy battle is an application that let's you challenge friends to a competition of your choice!</p>
                                 <h4>How do I create a challenge?</h4>
-                                <p>In the user dashboard click the "+ crete challenge" icon and fill in each section to create your challenge</p>
+                                <p>In the user dashboard click the "+ Create New Challenge" icon and fill in each section to create your challenge</p>
                                 <h4>How do Invite my Friends to a challenge?</h4>
-                                <p>After you create a challenge, you will be given a unique challenge code. Give that code to the friends you want to invite to your challenge. your friends will then click the "Join Challnge" tab on their user dashboard and enter in the challenge code you gave them and voila! they have joined!</p>
+                                <p>After you create a challenge, you will be given a unique challenge code. Give that code to the friends you want to invite to your challenge. Your friends will then click the "Join Challenge" tab on their dashboard and enter in the challenge code you gave them and voila! They have joined!</p>
                                 <h4>How do I win a challenge?</h4>
-                                <p>You have to be the first friend to reach the goal, whether its eating the most tacos, drinking the most beer, or most girls talked to, try your best before midnight on the day the challenge ends!</p>
+                                <p>You have just have to have the highest score, whether its eating the most tacos, drinking the most beer, or most girls talked to. Try your best to beat your friends!</p>
                             </div>
                         </div>
                     </li>
@@ -70,25 +71,27 @@
         <div class="profile-content">
 
           <div class="panel panel-danger">
-          <!-- Default panel contents -->
-          <div class="panel-heading"><h1>{{challenge.dataValues.name}}</h1></div>
-          <div class="panel-body">
-            <p>Description: {{challenge.dataValues.description}}</p>
-            <p>Metric: {{challenge.dataValues.measurement}}</p>
-            <p>Deadline: {{challenge.dataValues.deadline}}</p>
-            <p>Game Code: {{challenge.dataValues.gameCode}}</p>
-            <form action="/api/challenge/{{challenge.dataValues.id}}/score" method="POST">
-              <div class="input-group">
-                <input type="text" name="score" class="form-control">
-                <span class="input-group-btn">
+              <!-- Default panel contents -->
+              <div class="panel-heading"><h1 class="text-uppercase">{{challenge.dataValues.name}}</h1></div>
+              <div class="panel-body">
+                <p>Description: {{challenge.dataValues.description}}</p>
+                <p>Metric: {{challenge.dataValues.measurement}}</p>
+                <p>Deadline: {{deadline}}</p>
+                <p>Game Code: {{challenge.dataValues.gameCode}}</p>
+                <form action="/api/challenge/{{challenge.dataValues.id}}/score" method="POST">
+                  <div class="input-group">
+                    <input type="text" name="score" class="form-control">
+                    <span class="input-group-btn">
 
-                <button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
+                    <button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
 
-                </span>
+                    </span>
 
+                  </div>
+                </form>
               </div>
-            </form>
           </div>
+          <br>
           <table class="col-md-9 table table-bordered table-striped">
             <thead>
                 <tr>

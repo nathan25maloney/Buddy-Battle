@@ -1,3 +1,7 @@
+.container-fluid {
+  padding: 0;
+}
+
 /*    --------------------------------------------------
     :: Login Section
     -------------------------------------------------- */
@@ -105,8 +109,14 @@ Dashboard CSS
 /*----------------------------------------------------------------------------------------------*
 /* Profile container */
 
+.sidebar {
+  background-color: #800517;
+  min-height: 100vh;
+  color: white;
+}
+
 a {
-  color: #B22222;
+  color: #800517;
   text-decoration: none; /* no underline */
 }
 
@@ -126,17 +136,18 @@ a:hover {
 /* Profile sidebar */
 .profile-sidebar {
   padding: 20px 0 10px 0;
-  background: #fff;
+  /*background: #fff;*/
 }
 
-.profile-userpic img {
+.profile-userpic {
   float: none;
   margin: 0 auto;
-  width: 30%;
-  height: 30%;
+  width: 150px;
+  height: 150px;
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
+  overflow:hidden;
 }
 
 .profile-usertitle {
@@ -145,7 +156,7 @@ a:hover {
 }
 
 .profile-usertitle-name {
-  color: #5a7391;
+  /*color: #5a7391;*/
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 7px;
@@ -239,6 +250,7 @@ a:hover {
             overflow: auto; /* Enable scroll if needed */
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            color: #000000;
         }
 
         /* Modal Content */
