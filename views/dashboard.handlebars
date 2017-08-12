@@ -1,150 +1,151 @@
 <div class="container-fluid">
-    <div class="col-md-3">
-        <div class="profile-sidebar">
-            <div id="sidebar-logo" class="text-center">
-                <img id="mini-logo" src="/assets/images/buddyBattleLogo.png">
-                <h3>Buddy Battle</h3>
-            </div>
-            <!-- SIDEBAR USERPIC -->
-            <div class="profile-userpic">
-                <img id="profile-img" src="/assets/images/person-silhouette.gif" class="img-responsive" alt="">
-            </div>
-            <!-- END SIDEBAR USERPIC -->
-            <!-- SIDEBAR USER TITLE -->
-            <div class="profile-usertitle">
-                <div class="profile-usertitle-name">
-                    <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
-                    {{user.username}}
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <div id="sidebar-logo" class="text-center">
+                        <img id="mini-logo" src="/assets/images/buddyBattleLogo.png">
+                        <h3>Buddy Battle</h3>
+                    </div>
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                        <img id="profile-img" src="/assets/images/person-silhouette.gif" class="img-responsive" alt="">
+                    </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
+                            {{user.username}}
+                        </div>
+                    </div>
+                    <!-- END SIDEBAR USER TITLE -->
+                    <!-- SIDEBAR MENU -->
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li>
+                                <!-- /   MODAl #1   /-->
+                                <!-- Trigger/Open The Modal -->
+                                <button class="myBtn_multi">
+                                    <!-- / Modal 1 / -->
+                                    <i class="glyphicon glyphicon-plus"></i> Create New Challenge
+                                </button>
+                                <div class="modal modal_multi">
+                                    <!-- Modal content -->
+                                    <form id="newChallenge" name="newChallenge" method="post" action="/api/challenge/new">
+                                        <div class="modal-content">
+                                            <span class="close close_multi">×</span>
+                                            <div class="form-group">
+                                                <span> <label for="name">Challenge Name</label>
+                                               <!-- HANDLEBARS-->  <input type="name" name="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
+                                               </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span><label for="exampleTextarea">Description of Challenge</label>
+                                               <!-- HANDLEBARS-->  <textarea name="description" class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
+                                               </span>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- HANDLEBARS-->
+                                                <span> <label for="metric">What are you measuring?</label>
+                                                <input type="metric" class="form-control" name="metric" placeholder="i.e. # of tacos"> </span>
+                                            </div>
+                                            <span> <label class="demoHeaders">Datepicker</label>
+                                                <input name="datepicker" id="datepicker"> </span>
+                                            <p>(Challenge ends at midnight of the date selected!)</p>
+                                            <button id="submit-challenge" align="right" class="btn btn-default" type="submit" method="post" action="/api/challenge/new">Create your challenge!</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <br>
+                            <!-- //   MODAL #2   //-->
+                            <li>
+                                <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button>
+                                <div class="modal modal_multi">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close close_multi">×</span>
+                                        <h3>Enter in your unique challenge code:</h3>
+                                        <!-- HANDLEBARS-->
+                                        <form id="joinChallenge" name="joinChallenge" method="post" action="/api/challenge/join">
+                                        <div class="input-group">
+                                            <input id="gameCode" name="gameCode" type="text" class="form-control" placeholder="XXXX">
+                                            <span class="input-group-btn">
+                                                    <button id="submit-join" align="right" class="btn btn-default" 
+                                                type="submit" method="post" action="/api/challenge/new">Join!</button>
+                                                  </span>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <br>
+                            <!-- /////   MODAL #3   /////-->
+                            <li>
+                                <!-- Trigger/Open The Modal -->
+                                <button class="myBtn_multi">
+                                    <i class="glyphicon glyphicon-menu-hamburger"></i> FAQs
+                                </button>
+                                <div class="modal modal_multi">
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close close_multi">×</span>
+                                        <h2>Welcome to Buddy Battle!</h2>
+                                        <hr>
+                                        <h4>What is Buddy Battle?</h4>
+                                        <p>Buddy battle is an application that let's you challenge friends to a competition of your choice!</p>
+                                        <h4>How do I create a challenge?</h4>
+                                        <p>In the user dashboard click the "+ crete challenge" icon and fill in each section to create your challenge</p>
+                                        <h4>How do Invite my Friends to a challenge?</h4>
+                                        <p>After you create a challenge, you will be given a unique challenge code. Give that code to the friends you want to invite to your challenge. your friends will then click the "Join Challnge" tab on their user dashboard and enter in the challenge code you gave them and voila! they have joined!</p>
+                                        <h4>How do I win a challenge?</h4>
+                                        <p>You have to be the first friend to reach the goal, whether its eating the most tacos, drinking the most beer, or most girls talked to, try your best before midnight on the day the challenge ends!</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <br>
+                            <!-- ///   Logout Button ///-->
+                            <li>
+                                <form id="logout" name="logout" method="post" action="/logout">
+                                    <button class="submit" id="sign-out">
+                                        <i class="glyphicon glyphicon-arrow-left"></i> Log Out
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END MENU -->
                 </div>
             </div>
-            <!-- END SIDEBAR USER TITLE -->
-            <!-- SIDEBAR MENU -->
-            <div class="profile-usermenu">
-                <ul class="nav">
-                    <li>
-                        <!-- /   MODAl #1   /-->
-                        <!-- Trigger/Open The Modal -->
-                        <button class="myBtn_multi">
-                            <!-- / Modal 1 / -->
-                            <i class="glyphicon glyphicon-plus"></i> Create New Challenge
-                        </button>
-                        <div class="modal modal_multi">
-                            <!-- Modal content -->
-                            <form id="newChallenge" name="newChallenge" method="post" action="/api/challenge/new">
-                                <div class="modal-content">
-                                    <span class="close close_multi">×</span>
-                                    <div class="form-group">
-                                        <span> <label for="name">Challenge Name</label>
-                                       <!-- HANDLEBARS-->  <input type="name" name="name" class="form-control" placeholder="i.e. Taco Eating Showdown!">
-                                       </span>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <div class="page-header">
+                        <h1>Challenges</h1>
+                    </div>
+                    <!-- New Content -->
+                    <div class="challenge-container">
+                        <table id="Challenge-table" class="table table-striped">
+                            <thead>
+                                {{#each challenges}}
+                                <tr>
+                                    <div class="panel panel-danger">
+                                        <!-- Default panel contents -->
+                                        <div class="panel-heading"><a href="/challenge/{{this.dataValues.id}}"><h3>{{this.dataValues.name}}</h3></a></div>
+                                        <div class="panel-body">
+                                            <p>{{this.dataValues.description}}</p>
+                                        </div>
+                                        <!-- List group -->
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Metric: {{this.dataValues.measurement}}</li>
+                                            <li class="list-group-item">Game Code: {{this.dataValues.gameCode}}</li>
+                                        </ul>
                                     </div>
-                                    <div class="form-group">
-                                        <span><label for="exampleTextarea">Description of Challenge</label>
-                                       <!-- HANDLEBARS-->  <textarea name="description" class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea>
-                                       </span>
-                                    </div>
-                                    <div class="form-group">
-                                        <!-- HANDLEBARS-->
-                                        <span> <label for="metric">What are you measuring?</label>
-                                        <input type="metric" class="form-control" name="metric" placeholder="i.e. # of tacos"> </span>
-                                    </div>
-                                    <span> <label class="demoHeaders">Datepicker</label>
-                                        <input name="datepicker" id="datepicker"> </span>
-                                    <p>(Challenge ends at midnight of the date selected!)</p>
-                                    <button id="submit-challenge" align="right" class="btn btn-default" type="submit" method="post" action="/api/challenge/new">Create your challenge!</button>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
-                    <br>
-                    <!-- //   MODAL #2   //-->
-                    <li>
-                        <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button>
-                        <div class="modal modal_multi">
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                                <span class="close close_multi">×</span>
-                                <h3>Enter in your unique challenge code:</h3>
-                                <!-- HANDLEBARS-->
-                                <form id="joinChallenge" name="joinChallenge" method="post" action="/api/challenge/join">
-                                <div class="input-group">
-                                    <input id="gameCode" name="gameCode" type="text" class="form-control" placeholder="XXXX">
-                                    <span class="input-group-btn">
-                                            <button id="submit-join" align="right" class="btn btn-default" 
-                                        type="submit" method="post" action="/api/challenge/new">Join!</button>
-                                          </span>
-                                </div>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-                    <br>
-                    <!-- /////   MODAL #3   /////-->
-                    <li>
-                        <!-- Trigger/Open The Modal -->
-                        <button class="myBtn_multi">
-                            <i class="glyphicon glyphicon-menu-hamburger"></i> FAQs
-                        </button>
-                        <div class="modal modal_multi">
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                                <span class="close close_multi">×</span>
-                                <h2>Welcome to Buddy Battle!</h2>
-                                <hr>
-                                <h4>What is Buddy Battle?</h4>
-                                <p>Buddy battle is an application that let's you challenge friends to a competition of your choice!</p>
-                                <h4>How do I create a challenge?</h4>
-                                <p>In the user dashboard click the "+ crete challenge" icon and fill in each section to create your challenge</p>
-                                <h4>How do Invite my Friends to a challenge?</h4>
-                                <p>After you create a challenge, you will be given a unique challenge code. Give that code to the friends you want to invite to your challenge. your friends will then click the "Join Challnge" tab on their user dashboard and enter in the challenge code you gave them and voila! they have joined!</p>
-                                <h4>How do I win a challenge?</h4>
-                                <p>You have to be the first friend to reach the goal, whether its eating the most tacos, drinking the most beer, or most girls talked to, try your best before midnight on the day the challenge ends!</p>
-                            </div>
-                        </div>
-                    </li>
-                    <br>
-                    <!-- ///   Logout Button ///-->
-                    <li>
-                        <form id="logout" name="logout" method="post" action="/logout">
-                            <button class="submit" id="sign-out">
-                                <i class="glyphicon glyphicon-arrow-left"></i> Log Out
-                            </button>
-                        </form>
-                    </li>
-                </ul>
+                                </tr>
+                                {{/each}}
+                            </thead>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <!-- END MENU -->
-        </div>
-    </div>
-    <div class="col-md-9">
-        <div class="profile-content">
-            <div class="page-header">
-                <h1>Challenges</h1>
-            </div>
-            <!-- New Content -->
-            <div class="challenge-container">
-                <table id="Challenge-table" class="table table-striped">
-                    <thead>
-                        {{#each challenges}}
-                        <tr>
-                            <div class="panel panel-danger">
-                                <!-- Default panel contents -->
-                                <div class="panel-heading">Name: <a href="/challenge/{{this.dataValues.id}}">{{this.dataValues.name}}</a></div>
-                                <div class="panel-body">
-                                    <p>Desciption: {{this.dataValues.description}}</p>
-                                </div>
-                                <!-- List group -->
-                                <ul class="list-group">
-                                    <li class="list-group-item">Measure: {{this.dataValues.measurement}}</li>
-                                </ul>
-                            </div>
-                        </tr>
-                        {{/each}}
-                    </thead>
-                </table>
-            </div>
-        </div>
-    </div>
     <!-- Container Close -->
 </div>
 

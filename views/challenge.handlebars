@@ -6,7 +6,7 @@
                 <h3>Buddy Battle</h3>
             </div>                        
             <!-- SIDEBAR USERPIC -->
-            <div class="profile-userpic">
+            <div class="profile-userpic text-center">
                 <img id="profile-img" src="/assets/images/person-silhouette.gif" alt="user image">
             </div>
             <!-- END SIDEBAR USERPIC -->
@@ -77,17 +77,16 @@
             <p>Metric: {{challenge.dataValues.measurement}}</p>
             <p>Deadline: {{challenge.dataValues.deadline}}</p>
             <p>Game Code: {{challenge.dataValues.gameCode}}</p>
-            <form action="/api/challenge/{{challenge.dataValues.description}}/score" method="POST">
+            <form action="/api/challenge/{{challenge.dataValues.id}}/score" method="POST">
               <div class="input-group">
                 <input type="text" name="score" class="form-control">
                 <span class="input-group-btn">
                 <button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
+                </span>
               </div>
             </form>
           </div>
-
-          <!-- List group -->
-          <table class="col-md-9 table table-striped">
+          <table class="col-md-9 table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Challenger</th>
@@ -96,17 +95,15 @@
             </thead>
             <tbody>
 
-            {{#each users}}
-            <tr>
-                <td>{{this.dataValues.username}}</td>
-                <td>{{this.Score.dataValues.score}}</td>
-            </tr>
-            {{/each}}
+                {{#each users}}
+                <tr>
+                    <td>{{this.dataValues.username}}</td>
+                    <td>{{this.Score.dataValues.score}}</td>
+                </tr>
+                {{/each}}
+
             </tbody>
           </table>
-                
-              </li>
-        </div>
     </div>
 <!-- Container Close -->
 </div>
