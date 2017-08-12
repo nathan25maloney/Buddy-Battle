@@ -1,9 +1,22 @@
 
 {
-  
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "buddy_battle_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "buddy_battle_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
   "production": {
     "username": "hchru5sa7nn0669h",
-    "password": "r6s3py6bz79o79p6",
+    "password": "e8yj2vk6yej1y1pe",
     "database": "n2rgerkjltotxkd8",
     "host": "mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
