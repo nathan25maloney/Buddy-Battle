@@ -4,17 +4,17 @@ var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');
 var basename  = path.basename(module.filename);
-var env       = process.env.NODE_ENV || 'development';
+var env       = process.env.NODE_ENV || 'production';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
 // var settings  = require(__dirname +'/../settings/settings.js');
 
 
-  console.log("using production variables");
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  // console.log("using production variables");
+  // var sequelize = new Sequelize(process.env[config.use_env_variable]);
 // } else {
 //   console.log("using the wrong variables");
-//   var sequelize = new Sequelize(config.database, config.username, config.pass, config);
+   var sequelize = new Sequelize(config.database, config.username, config.password, config.host, config.dialect);
 // }
 
 fs
