@@ -69,7 +69,7 @@
                                             <input id="gameCode" name="gameCode" type="text" class="form-control" placeholder="XXXX">
                                             <span class="input-group-btn">
                                                     <button id="submit-join" align="right" class="btn btn-default" 
-                                                type="submit" method="post" action="/api/challenge/new">Join!</button>
+                                                type="submit" method="post" action="/api/challenge/join">Join!</button>
                                                   </span>
                                         </div>
                                         </form>
@@ -175,7 +175,7 @@
                     <div class="challenge-container">
                         <table id="Challenge-table" class="table table-striped">
                             <thead>
-                                {{#each challenges}}
+                                {{#each challenge}}
                                 <tr>
                                     <div class="panel panel-danger">
                                         <!-- Default panel contents -->
@@ -186,6 +186,15 @@
                                         <!-- List group -->
                                         <ul class="list-group">
                                             <li class="list-group-item">Measure: {{this.dataValues.measurement}}</li>
+                                            <li class="list-group-item">Game Code: {{this.dataValues.gameCode}}</li>
+
+                                            <li class="list-group-item">
+                                                <form id="joinChallenge" name="joinChallenge" method="post" action="/api/challenge/join">
+                                                    <span class="input-group-btn">
+                                                        <button id="submit-join" align="right" class="btn btn-default" 
+                                                    type="submit"  method="post" action="/api/challenge/join/{{this.dataValues.id}}">Join!</button>
+                                                      </span></li>
+                                                </form>
                                         </ul>
                                     </div>
                                 </tr>
