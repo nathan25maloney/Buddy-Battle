@@ -106,7 +106,12 @@ Dashboard CSS
 /* Profile container */
 
 a {
-  color: blue;
+  color: #B22222;
+  text-decoration: none; /* no underline */
+}
+
+a:hover {
+  color: #E22222;
   text-decoration: none; /* no underline */
 }
 
@@ -294,4 +299,13 @@ background: none;
   #winner-pic {
     height: 100px;
     width: 100px;
+}
+
+/*    --------------------------------------------------
+    Challenge Page
+    -------------------------------------------------- */
+
+.table-bordered th, .table-bordered td { 
+  border: 1px 
+  solid #ddd!important 
 }
