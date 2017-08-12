@@ -1,209 +1,113 @@
-<div class="container">
-        <div id="wrapBox">
-            <div class="row profile">
-                <div class="col-md-3">
-                    <div class="profile-sidebar">
-                        <!-- SIDEBAR USERPIC -->
-                        <div class="profile-userpic">
-                            <img src="/assets/images/person-silhouette.gif" class="img-responsive" alt="">
-                        </div>
-                        <!-- END SIDEBAR USERPIC -->
-                        <!-- SIDEBAR USER TITLE -->
-                        <div class="profile-usertitle">
-                            <div class="profile-usertitle-name">
-                                <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
-                                {{user.username}}
-                            </div>
-                        </div>
-                        <!-- END SIDEBAR USER TITLE -->
-                        <!-- SIDEBAR MENU -->
-                        <div class="profile-usermenu">
-                            <ul class="nav">
-                                <!-- <li class="active"> -->
-                                     <!-- /   MODAl #1   / -->
-                                    <!-- Trigger/Open The Modal -->
-<!--                                     <button class="myBtn_multi"> -->
-                                        <!-- Modal 1 -->
-<!--                                         <i class="glyphicon glyphicon-plus"></i> Create New Challenge -->
-<!--                                     </button> -->
-<!--                                     <div class="modal modal_multi"> -->
-                                        <!-- Modal content -->
-<!--                                         <div class="modal-content"> -->
-<!--                                             <span class="close close_multi">×</span> -->
-<!--                                             <div class="form-group"> -->
-<!--                                                 <label for="name">Challenge Name</label> -->
-                                                <!-- HANDLEBARS  <input type="name" class="form-control" placeholder="i.e. Taco Eating Showdown!"> -->
-<!--                                             </div> -->
-<!--                                             <div class="form-group"> -->
-<!--                                                 <label for="exampleTextarea">Description of Challenge</label> -->
-                                                <!-- HANDLEBARS  <textarea class="form-control" placeholder="i.e. Let's see who can eat the most tacos! the first one to eat 10 tacos tonight wins!" id="exampleTextarea" rows="3"></textarea> -->
-<!--                                             </div> -->
-<!--                                              <div class="form-group"> -->
-                                               <!-- HANDLEBARS   <label for="metric">What are you measuring?</label> -->
-<!--                                                 <input type="metric" class="form-control" placeholder="i.e. # of tacos"> -->
-<!--                                             </div> -->
-<!--                                              <label class="demoHeaders">Datepicker</label> -->
-<!--                                                 <input type="text" id="datepicker"> -->
-<!--                                                 <p>(Challenge ends at midnight of the date selected!)</p> -->
-                     <!-- HANDLEBARS     <button id="submit-challenge" align="right" class="btn btn-default" type="submit">Create your challenge!</button> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                 </li> -->
-<!--                                 <br> -->
-                                <!-- //   MODAL #2   //-->
-                                <!-- <li> -->
-<!--                                          <button class="myBtn_multi"><i class="glyphicon glyphicon-arrow-right"></i> Join Challenge</button> -->
-<!--                                         <div class="modal modal_multi"> -->
-<!--  -->
-                                            <!-- Modal content -->
-<!--                                             <div class="modal-content"> -->
-<!--                                                 <span class="close close_multi">×</span> -->
-<!--                                                 <h3>Enter in your unique challenge code:</h3> -->
-                                             <!-- HANDLEBARS    <div class="input-group"> -->
-<!--                                                   <input id="code" type="text" class="form-control" placeholder="XXXX"> -->
-<!--                                                   <span class="input-group-btn"> -->
-<!--                                                     <button class="btn btn-secondary" type="button">Go!</button> -->
-<!--                                                   </span> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--  -->
-<!--                                         </div> -->
-<!--  -->
-<!--                                 </li> -->
-<!--                                 <br> -->
-                                <!-- ///   MODAL #3   ///-->
-                                <!-- <li> -->
-<!--                                     <button class="myBtn_multi"> -->
-                                        <!-- Modal 3 -->
-<!--                                         <i class="glyphicon glyphicon-user"> -->
-<!--                                                 </i> friends -->
-<!--                                     </button> -->
-<!--                                     <div class="modal modal_multi"> -->
-                                        <!-- Modal content -->
-<!--                                         <div class="modal-content"> -->
-<!--                                             <span class="close close_multi">×</span> -->
-<!--                                             <div class="profile-header-container"> -->
-<!--                                                 <div class="profile-header-img"> -->
-<!--                                                     <img class="img-circle" id="profile-img" src="http://www.hmcoloringpages.com/wp-content/uploads/person-silhouette-9.gif" /> -->
-                                                    <!-- badge -->
-<!--                                                     <div class="rank-label-container"> -->
-<!--                                                     <span id="friend-name" class="label label-default rank-label">Robbie Delfs</span> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                 </li> -->
-<!--                                 <br> -->
-                                 <!-- /////////////   MODAL #4    ///////// -->
-<!--                                 <li> -->
-                                    <!-- Trigger/Open The Modal -->
-<!--                                     <button class="myBtn_multi"> -->
-<!--                                         <i class="glyphicon glyphicon-option-vertical"></i> Challenges Won -->
-<!--                                     </button> -->
-<!--                                     <div class="modal modal_multi"> -->
-                                        <!-- Modal content -->
-
-              <!--                           <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <div class="profile-header-container">
-                                                <div class="profile-header-img">
-                                                    <img class="/assets/images/trophy.jpeg" /> -->
-
-                                                    <!-- badge -->
-<!--                                                     <div class="rank-label-container"> -->
-<!--                                                         <span class="label label-default rank-label">Taco Showdown!</span> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                 </li> -->
-<!--                                 <br> -->
-                                <!-- //////   MODAL #5   /////-->
-                                <li>
-                                    <!-- Trigger/Open The Modal -->
-                                    <button class="myBtn_multi">
-                                        <i class="glyphicon glyphicon-menu-hamburger"></i> FAQs
-                                    </button>
-                                    <div class="modal modal_multi">
-                                        <!-- Modal content -->
-                                        <div class="modal-content">
-                                            <span class="close close_multi">×</span>
-                                            <h2>Welcome to Buddy Battle!</h2>
-                                            <hr>
-                                            <h4>What is Buddy Battle?</h4>
-                                            <p>Buddy battle is an application that let's you challenge friends to a competition of your choice!</p>
-                                            <h4>How do I create a challenge?</h4>
-                                            <p>In the user dashboard click the "+ crete challenge" icon and fill in each section to create your challenge</p>
-                                            <h4>How do Invite my Friends to a challenge?</h4>
-                                            <p>After you create a challenge, you will be given a unique challenge code. Give that code to the friends you want to invite to your challenge. your friends will then click the "Join Challnge" tab on their user dashboard and enter in the challenge code you gave them and voila! they have joined!</p>
-                                            <h4>How do I win a challenge?</h4>
-                                            <p>You have to be the first friend to reach the goal, whether its eating the most tacos, drinking the most beer, or most girls talked to, try your best before midnight on the day the challenge ends!</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <br>
-            <!-- ///////////   Logout Button //////////-->
-                                    <li>
-                                    <form id="logout" name="logout" method="post" action="/logout">
-                                        <button class="submit" id="sign-out">
-                                            <i class="glyphicon glyphicon-arrow-left"></i> Log Out
-                                        </button>
-                                    </form>
-                                    </li>
-                                    </ul>
-                                </div>
-                        <!-- END MENU -->
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="profile-content">
-
-                      <div class="panel panel-danger">
-                      <!-- Default panel contents -->
-                      <div class="panel-heading"><h1>{{challenge.dataValues.name}}</h1></div>
-                      <div class="panel-body">
-                        <p>Description: {{challenge.dataValues.description}}</p>
-                        <p>Metric: {{challenge.dataValues.measurement}}</p>
-                        <p>Deadline: {{challenge.dataValues.deadline}}</p>
-                        <p>Game Code: {{challenge.dataValues.gameCode}}</p>
-                        <form action="/api/challenge/{{challenge.dataValues.description}}/score" method="POST">
-                          <div class="input-group">
-                            <input type="text" name="score" class="form-control">
-                            <span class="input-group-btn">
-                            <button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
-                            </span>
-                          </div>
-                        </form>
-                      </div>
-
-                      <!-- List group -->
-                      <table class="col-md-9 table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Challenger</th>
-                                <th>Score</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        {{#each users}}
-                        <tr>
-                            <td>{{this.dataValues.username}}</td>
-                            <td>{{this.Score.dataValues.score}}</td>
-                        </tr>
-                        {{/each}}
-                        </tbody>
-                      </table>
-                            
-                          </li>
-                    </div>
+<div class="container-fluid">
+    <div class="col-md-3">
+        <div class="profile-sidebar">
+            <div id="sidebar-logo" class="text-center">
+                <img id="mini-logo" src="/assets/images/buddyBattleLogo.png">
+                <h3>Buddy Battle</h3>
+            </div>                        
+            <!-- SIDEBAR USERPIC -->
+            <div class="profile-userpic">
+                <img id="profile-img" src="/assets/images/person-silhouette.gif" alt="user image">
+            </div>
+            <!-- END SIDEBAR USERPIC -->
+            <!-- SIDEBAR USER TITLE -->
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">
+                    <!-- USE HANDLEBARS FOR LOGIN UPDATE-->
+                    {{user.username}}
                 </div>
             </div>
-        </dir>
-        <!-- Container Close -->
+            <!-- END SIDEBAR USER TITLE -->
+            <!-- SIDEBAR MENU -->
+            <div class="profile-usermenu">
+                <ul class="nav">
+                    <!-- ///////////   Back to Dashboard Button //////////-->
+                    <li>
+                    <form id="dashboard" name="dashboard" method="get" action="/dashboard">
+                        <button class="submit" id="dashboard">
+                            <i class="glyphicon glyphicon-home"></i> Dashboard
+                        </button>
+                    </form>
+                    </li>
+                <br>
+                    <li>
+                        <!-- Trigger/Open The Modal -->
+                        <button class="myBtn_multi">
+                            <i class="glyphicon glyphicon-menu-hamburger"></i> FAQs
+                        </button>
+                        <div class="modal modal_multi">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close close_multi">×</span>
+                                <h2>Welcome to Buddy Battle!</h2>
+                                <hr>
+                                <h4>What is Buddy Battle?</h4>
+                                <p>Buddy battle is an application that let's you challenge friends to a competition of your choice!</p>
+                                <h4>How do I create a challenge?</h4>
+                                <p>In the user dashboard click the "+ crete challenge" icon and fill in each section to create your challenge</p>
+                                <h4>How do Invite my Friends to a challenge?</h4>
+                                <p>After you create a challenge, you will be given a unique challenge code. Give that code to the friends you want to invite to your challenge. your friends will then click the "Join Challnge" tab on their user dashboard and enter in the challenge code you gave them and voila! they have joined!</p>
+                                <h4>How do I win a challenge?</h4>
+                                <p>You have to be the first friend to reach the goal, whether its eating the most tacos, drinking the most beer, or most girls talked to, try your best before midnight on the day the challenge ends!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <br>
+<!-- ///////////   Logout Button //////////-->
+                        <li>
+                        <form id="logout" name="logout" method="post" action="/logout">
+                            <button class="submit" id="sign-out">
+                                <i class="glyphicon glyphicon-arrow-left"></i> Log Out
+                            </button>
+                        </form>
+                        </li>
+                        </ul>
+                    </div>
+            <!-- END MENU -->
+        </div>
     </div>
-    <br>
-    <br>
+    <div class="col-md-9">
+        <div class="profile-content">
+
+          <div class="panel panel-danger">
+          <!-- Default panel contents -->
+          <div class="panel-heading"><h1>{{challenge.dataValues.name}}</h1></div>
+          <div class="panel-body">
+            <p>Description: {{challenge.dataValues.description}}</p>
+            <p>Metric: {{challenge.dataValues.measurement}}</p>
+            <p>Deadline: {{challenge.dataValues.deadline}}</p>
+            <p>Game Code: {{challenge.dataValues.gameCode}}</p>
+            <form action="/api/challenge/{{challenge.dataValues.description}}/score" method="POST">
+              <div class="input-group">
+                <input type="text" name="score" class="form-control">
+                <span class="input-group-btn">
+                <button type="submit" class="btn btn-lrg btn-success">Update Your Score!</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- List group -->
+          <table class="col-md-9 table table-striped">
+            <thead>
+                <tr>
+                    <th>Challenger</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            {{#each users}}
+            <tr>
+                <td>{{this.dataValues.username}}</td>
+                <td>{{this.Score.dataValues.score}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+          </table>
+                
+              </li>
+        </div>
+    </div>
+<!-- Container Close -->
+</div>
 <script src="\assets\js\challenge.js"></script>
