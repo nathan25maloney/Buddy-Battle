@@ -23,7 +23,7 @@ exports.dashboard = function(req,res) {
         }
     }).then(function(user) {
         // get all challenges and scores
-        user.getChallenges().then(function(challenges) {
+        db.Challenge.findAll({}).then(function(challenges) {
             let context = {
                 user: req.user,
                 challenges: challenges
