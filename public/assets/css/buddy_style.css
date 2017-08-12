@@ -109,6 +109,10 @@ Dashboard CSS
 /*----------------------------------------------------------------------------------------------*
 /* Profile container */
 
+#main-content {
+  margin-left: 30%;
+}
+
 .sidebar {
   background-color: #800517;
   min-height: 100vh;
@@ -116,6 +120,7 @@ Dashboard CSS
   position: fixed;
   left:0;
   top:0;
+  z-index: 2;
 }
 
 a {
