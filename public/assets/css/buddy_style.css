@@ -6,6 +6,11 @@
     width: 300px;
 }
 
+#mini-logo {
+    height: 30%;
+    width: 30%;
+}
+
 #login {
     padding-top: 50px
 }
@@ -109,11 +114,6 @@ a {
   margin: 20px 0;
 }
 
-#profile-img {
-    height: 100px;
-    width: 100px;
-}
-
 #friend-name {
     padding-left: 10px;
 }
@@ -127,8 +127,8 @@ a {
 .profile-userpic img {
   float: none;
   margin: 0 auto;
-  width: 50%;
-  height: 50%;
+  width: 30%;
+  height: 30%;
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
