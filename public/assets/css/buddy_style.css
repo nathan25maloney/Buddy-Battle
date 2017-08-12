@@ -114,6 +114,8 @@ Dashboard CSS
   min-height: 100vh;
   color: white;
   position: fixed;
+  left:0;
+  top:0;
 }
 
 a {
