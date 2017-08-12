@@ -142,7 +142,7 @@ exports.updateScore = function(req, res) {
                 challenge_id: req.params.id
             }
         }).then(function(score) {
-            res.json(score);
+            res.redirect("/challenge/" + req.params.id);
         });
     };
 
